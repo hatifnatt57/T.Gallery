@@ -1,0 +1,16 @@
+.change-image-btn {
+  background-color: var(--sand);
+  margin-bottom: 20px;
+}
+
+.image-input {
+  display: none;
+}
+
+.form__adding-image .change-image-btn {
+  display: none;
+}
+
+.form__adding-image .image-input {
+  display: block;
+}

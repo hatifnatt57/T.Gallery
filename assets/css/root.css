@@ -1,0 +1,15 @@
+:root {
+  --navheight: 75px;
+  --logowidth: 60px;
+  --white: #f7f7f7;
+  --bgr: #393e46;
+  --green: #6d9886;
+  --sand: #f2e7d5;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --navheight: 50px;
+    --logowidth: 50px;
+  }
+}

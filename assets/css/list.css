@@ -1,0 +1,67 @@
+.results {
+  list-style-type: none;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: calc(var(--navheight) + 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.figure-container {
+  height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.figure-container:hover {
+  background-color: rgba(247, 247, 247, 0.1);
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+figure img {
+  width: 100px;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+figcaption {
+  font-family: 'PTRootUI', sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  overflow: auto;
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 17px;
+}
+
+figcaption p:nth-child(2) {
+  margin-top: 1.2em;
+}
+
+.description {
+  font-style: italic;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .figure-container:hover {
+    background-color: transparent;
+  }
+
+  .results {
+    padding-top: var(--navheight);
+  }
+}

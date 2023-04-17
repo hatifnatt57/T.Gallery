@@ -1,0 +1,162 @@
+body {
+  padding-top: calc(var(--navheight) - 10px);
+}
+
+header {
+  height: var(--navheight);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: var(--bgr);
+  border-bottom: dashed 2px var(--white);
+}
+
+.add-link {
+  fill: var(--white);
+  display: block;
+  width: calc(var(--navheight) * 0.7);
+  height: calc(var(--navheight) * 0.7);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-link:hover {
+  opacity: 1;
+}
+
+.about-link, .links-link {
+  color: var(--white);
+  font-family: 'PTRootUI', sans-serif;
+  text-decoration: underline;
+  font-size: 30px;
+  font-size: calc(var(--navheight) * 0.3);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-link {
+  left: 25%;
+}
+
+.links-link {
+  left: 75%;
+}
+
+h3 {
+  font-family: 'PTRootUI', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--white);
+  margin: 50px auto 15px;
+}
+
+ul {
+  list-style-type: none;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+ul:last-of-type {
+  margin-bottom: 50px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+li:hover {
+  background-color: rgba(247, 247, 247, 0.1);
+}
+
+li img {
+  width: 100px;
+  height: 100%;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+
+li .caption {
+  font-family: 'PTRootUI', sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  overflow: auto;
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+li .caption p:nth-child(2) {
+  margin-top: 1.2em;
+}
+
+li .ui {
+  width: 175px;
+  height: 100%;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+li .ui form {
+  display: inline;
+}
+
+li .ui button {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+li .ui button:hover {
+  opacity: 1;
+}
+
+li .ui button svg {
+  height: 100%;
+  fill: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+  li:hover {
+    background-color: transparent;
+  }
+
+  li .ui button:hover {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  li .caption {
+    display: none;
+  }
+
+  .edit-links {
+    right: 5%;
+  }
+
+  .edit-links a {
+    font-size: 20px;
+  }
+}

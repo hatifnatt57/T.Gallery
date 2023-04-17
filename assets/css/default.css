@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+html, body {
+  background-color: var(--bgr);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+body.overflow-hidden {
+  overflow: hidden;
+}

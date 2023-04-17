@@ -1,0 +1,46 @@
+main {
+  padding-top: calc(var(--navheight) + 30px);
+  width: 80%;
+  margin: 0 auto;
+  font-family: 'PTRootUI', sans-serif;
+  font-size: 18px;
+  color: var(--white);
+  text-align: justify;
+}
+
+main img {
+  float: left;
+  margin: 0 10px 10px 0;
+  max-width: 300px;
+}
+
+.mdash {
+  margin: 0 2px;
+}
+
+main a {
+  color: var(--sand);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    padding-top: calc(var(--navheight) + 15px);
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  main img {
+    margin: 0 0 10px;
+    float: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 95%;
+  }
+
+  main p {
+    clear: both;
+  }
+}

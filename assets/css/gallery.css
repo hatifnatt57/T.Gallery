@@ -1,0 +1,56 @@
+.figure-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+figure {
+  width: 100%;
+  font-family: 'PTRootUI', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+figure img {
+  max-width: calc(100% - 64px - 15px - 300px);
+  max-height: calc(100vh - 2 * var(--navheight));
+}
+
+figcaption {
+  background-color: var(--white);
+  padding: 20px 30px;
+  width: 300px;
+}
+
+.description {
+  font-style: italic;
+}
+
+.pic-title {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1024px) {
+  .figure-container {
+    height: unset;
+    margin-bottom: var(--navheight);
+  }
+
+  .figure-container:first-of-type {
+    padding-top: var(--navheight);
+  }
+
+  figure {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+assets/icons/*
+assets/pics/*
+assets/imgs/*
+assets/favicons/*
+libs
+node_modules
+pics.sql
+parts/logincredentials.php
