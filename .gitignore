@@ -2,7 +2,7 @@ assets/icons/*
 assets/pics/*
 assets/imgs/*
 assets/favicons/*
+backup
 libs
 node_modules
-pics.sql
 parts/logincredentials.php
