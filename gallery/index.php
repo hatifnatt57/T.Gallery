@@ -9,7 +9,7 @@ function notempty($var) {
 
 # List/Gallery view logic
 if (!isset($_SESSION['view'])) {
-  $_SESSION['view'] = 'list';
+  $_SESSION['view'] = 'gallery';
 }
 
 if (isset($_POST['change_view'])) {
@@ -85,11 +85,13 @@ if ($view === 'list') {
   $load_at_start = 10;
   $change_view_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>';
   $image_folder = 'icons';
+  $change_view_btn_title = 'Выставка';
 }
 else {
   $load_at_start = 0;
   $change_view_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>';
   $image_folder = 'pics';
+  $change_view_btn_title = 'Каталог';
 }
 $data_start = array_slice($data, 0, $load_at_start);
 $data_rem = array_slice($data, $load_at_start);
@@ -148,11 +150,11 @@ $data_rem = array_slice($data, $load_at_start);
           }
         ?>
         <input type="hidden" name="change_view" value="true">
-        <button type="submit">
+        <button type="submit" title="<?= $change_view_btn_title ?>">
           <?= $change_view_svg ?>
         </button>
       </form>
-      <button type="button" class="search-btn">
+      <button type="button" class="search-btn" title="Поиск">
         <svg class="zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
       </button>
     </div>
@@ -171,7 +173,7 @@ $data_rem = array_slice($data, $load_at_start);
   </div>
   <!-- Server data rendering -->
   <?php if (count($data) === 0): ?>
-  <h2 class="nothing-found-heading">По&nbsp;запросу ничего не&nbsp;найдено.</h2>
+  <h2 class="nothing-found-heading">По&nbsp;запросу ничего не&nbsp;найдено 🙁</h2>
   <?php else: ?>
   <ul class="results">
   <?php foreach ($data_start as $pic): ?>

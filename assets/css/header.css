@@ -213,12 +213,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 60px;
   color: var(--white);
   font-family: 'PTRootUI', sans-serif;
   position: absolute;
   bottom: 0px;
-  width: 80%;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   border-top: dashed 1px var(--white);
@@ -227,10 +227,10 @@ footer {
 }
 
 body {
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1150px) {
   .logo--short {
     display: inline;
   }
@@ -334,10 +334,6 @@ body {
 
   .nothing-found-heading {
     padding-top: calc(var(--navheight) + 30px);
-    width: 95%;
-  }
-
-  footer {
     width: 95%;
   }
 }

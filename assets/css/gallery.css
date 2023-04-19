@@ -22,13 +22,15 @@ figure img {
 }
 
 figcaption {
-  background-color: var(--white);
-  padding: 20px 30px;
+  background-color: var(--bgr);
+  color: var(--white);
+  padding: 20px 30px 0px;
   width: 300px;
 }
 
 .description {
   font-style: italic;
+  font-size: 14px;
 }
 
 .pic-title {
