@@ -1,5 +1,5 @@
 body {
-  padding-top: calc(var(--navheight) - 10px);
+  padding-top: var(--navheight);
 }
 
 header {
@@ -10,43 +10,39 @@ header {
   width: 100%;
   background-color: var(--bgr);
   border-bottom: dashed 2px var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
 }
 
-.add-link {
+header a, header button {
   fill: var(--white);
-  display: block;
   width: calc(var(--navheight) * 0.7);
   height: calc(var(--navheight) * 0.7);
   border-radius: 50%;
   opacity: 0.5;
   transition: opacity 0.2s;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.add-link:hover {
+header button {
+  fill: var(--bgr);
+  background-color: var(--white);
+}
+
+header a:hover, header button:hover {
   opacity: 1;
 }
 
-.about-link, .links-link {
-  color: var(--white);
-  font-family: 'PTRootUI', sans-serif;
-  text-decoration: underline;
-  font-size: calc(var(--navheight) * 0.3);
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
+.change-order-btn svg {
+  height: 60%;
 }
 
-.about-link {
-  left: 25%;
-}
-
-.links-link {
-  left: 75%;
+.menu-btn svg {
+  height: 50%;
 }
 
 h3 {
@@ -56,6 +52,10 @@ h3 {
   text-align: center;
   color: var(--white);
   margin: 50px auto 15px;
+}
+
+h3:first-of-type {
+  margin-top: 30px;
 }
 
 ul {
@@ -135,6 +135,52 @@ li .ui button:hover {
 li .ui button svg {
   height: 100%;
   fill: var(--white);
+}
+
+.change-order-mode {
+  display: none;
+}
+
+.body__change-order-mode header *,
+.body__change-order-mode .ui * {
+  display: none;
+}
+
+.body__change-order-mode .change-order-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body__change-order-mode .change-order-mode * {
+  display: block;
+}
+
+.body__change-order-mode header {
+  justify-content: center;
+  gap: 30px;
+}
+
+.header--order-ui--decline svg,
+.header--order-ui--accept svg {
+  height: 70%;
+}
+
+.li--ui--change-order-btn--up svg,
+.li--ui--change-order-btn--down svg {
+  position: relative;
+}
+
+.li--ui--change-order-btn--up svg {
+  top: 2px;
+}
+
+.li--ui--change-order-btn--down svg {
+  top: -2px;
+}
+
+.change-order-form {
+  display: none;
 }
 
 @media screen and (max-width: 1024px) {

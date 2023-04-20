@@ -222,7 +222,7 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   border-top: dashed 1px var(--white);
-  /* font-weight: 300; */
+  font-weight: 300;
   font-size: 14px;
 }
 

@@ -1,6 +1,7 @@
 main {
   padding-top: calc(var(--navheight) + 30px);
   width: 70%;
+  max-width: 1030px;
   margin: 0 auto;
   font-family: 'PTRootUI', sans-serif;
   font-size: 16px;

@@ -1,7 +1,3 @@
-body {
-  padding-bottom: 50px !important;
-}
-
 main {
   color: var(--white);
   font-family: 'PTRootUI', sans-serif;
@@ -11,12 +7,12 @@ main {
 main h1 {
   text-align: center;
   width: 95%;
-  margin: 25px auto 40px;
+  margin: 50px auto;
 }
 
 .greeting {
   font-size: 20px;
-  width: 90%;
+  width: 95%;
   max-width: 650px;
   margin: 0 auto;
   text-align: center;
@@ -24,22 +20,24 @@ main h1 {
 
 main h2 {
   text-align: center;
-  margin: 40px auto 15px;
-  letter-spacing: 1px;
+  margin: 50px auto 30px;
   text-transform: uppercase;
 }
 
 .imgs-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgs-container a {
+  width: 32%;
 }
 
 .imgs-container img {
-  width: 250px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -49,12 +47,12 @@ main h2 {
   }
 
   .imgs-container {
-    flex-direction: column;
     width: 95%;
-    gap: 20px;
+    flex-direction: column;
   }
-
-  .imgs-container img {
+  
+  .imgs-container a {
     width: 100%;
+    margin-bottom: 10px;
   }
 }

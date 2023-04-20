@@ -6,7 +6,7 @@ if ($_SESSION['logged_in'] !== 'true') {
   header('Location: ../admin/login/');
 }
 
-$stmt = $pdo->query('SELECT * FROM pics ORDER BY year DESC, orderint');
+$stmt = $pdo->query('SELECT * FROM pics ORDER BY orderint');
 $allPics = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $grafika = array();
@@ -44,7 +44,7 @@ function generateElement($pic) {
     $second_line = "<p>{$pic['description']}</p>";
   }
 return <<<ELEM
-  <li>
+  <li data-id="{$pic['id']}">
     <img src="../assets/icons/{$pic['id']}.{$pic['format']}">
     <div class="caption">
       <p>$first_line</p>
@@ -63,6 +63,11 @@ return <<<ELEM
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
         </button>
       </form>
+      <button type="button" class="change-order-mode li--ui--change-order-btn--up">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/></svg>      </button>
+      <button type="button" class="change-order-mode li--ui--change-order-btn--down">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
+      </button>
     </div>
   </li>
 ELEM;
@@ -98,15 +103,26 @@ ELEM;
     }
   ?>
   <header>
-    <a href="../admin/add/" class="add-link">
+    <div class="menu-container">
+      <button type="button" class="menu-btn" title="Другие разделы">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+      </button>
+    </div>
+    <a href="../admin/add/" class="add-link" title="Добавить запись">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
     </a>
-    <a href="./about/" class="about-link">
-      Обо мне
-    </a>
-    <a class="links-link">
-      НеГалерея
-    </a>
+    <button type="button" class="change-order-btn" title="Настроить порядок отображения">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+    </button>
+    <button type="button" class="change-order-mode header--order-ui-btn header--order-ui--decline" title="Отклонить изменения">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+    </button>
+    <button type="button" class="change-order-mode header--order-ui-btn header--order-ui--accept" title="Принять изменения">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+    </button>
+    <form action="./changeorder/" method="post" class="change-order-form">
+      <input type="hidden" name="order">
+    </form>
   </header>
   <?php
     if (count($allPics) === 0) {
@@ -115,21 +131,21 @@ ELEM;
     
     if (count($grafika) !== 0) {
       echo '<h3>Графика</h3>';
-      echo '<ul>';
+      echo '<ul class="ul-grafika">';
       foreach ($grafika as $pic) { echo(generateElement($pic)); }
       echo '</ul>';
     }
 
     if (count($pastel) !== 0) {
       echo '<h3>Пастель</h3>';
-      echo '<ul>';
+      echo '<ul class="ul-pastel">';
       foreach ($pastel as $pic) { echo(generateElement($pic)); }
       echo '</ul>';
     }
 
     if (count($akril) !== 0) {
       echo '<h3>Акрил</h3>';
-      echo '<ul>';
+      echo '<ul class="ul-akril">';
       foreach ($akril as $pic) { echo(generateElement($pic)); }
       echo '</ul>';
     }
@@ -141,5 +157,6 @@ ELEM;
       };
     });
   </script>
+  <script src="../assets/js/changeorder.js" defer></script>
 </body>
 </html>

@@ -24,8 +24,8 @@ figure img {
 figcaption {
   background-color: var(--bgr);
   color: var(--white);
-  padding-left: 15px;
-  width: 300px;
+  padding-left: 10px;
+  max-width: 300px;
 }
 
 .description {

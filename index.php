@@ -1,7 +1,7 @@
 <?php 
 require_once('./pdo.php');
 
-$stmt = $pdo->query('SELECT * FROM pics ORDER BY year DESC, orderint LIMIT 3');
+$stmt = $pdo->query('SELECT * FROM pics ORDER BY orderint LIMIT 3');
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -67,19 +67,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         const img = await loadImg(src);
         const a = document.createElement('a');
         a.appendChild(img);
-        let cat;
-        switch (entry['category']) {
-          case 'Графика':
-            cat = 'grafika';
-            break;
-          case 'Пастель':
-            cat = 'pastel';
-            break;
-          case 'Акрил':
-            cat = 'akril';
-            break;
-        }
-        a.href = './gallery/?cat=' + cat;
+        a.href = './gallery/?q=' + entry['search'];
         imgs.push(a);
       }
       imgs.forEach(a => { imgsContainer.appendChild(a) });
