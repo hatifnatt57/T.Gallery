@@ -55,4 +55,8 @@ figcaption {
   figure img {
     max-width: 100%;
   }
+
+  figcaption {
+    text-align: center;
+  }
 }

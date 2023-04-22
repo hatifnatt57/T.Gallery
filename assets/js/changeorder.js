@@ -22,11 +22,8 @@ downs.forEach(down => {
   down.addEventListener('click', function() {
     const me = this.parentElement.parentElement;
     const parent = me.parentElement;
-    let next = null;
     if (me.nextElementSibling !== null) {
-      next = me.nextElementSibling.nextElementSibling;
-    }
-    if (next !== null) {
+      const next = me.nextElementSibling.nextElementSibling;
       parent.insertBefore(me, next);
     }
   });

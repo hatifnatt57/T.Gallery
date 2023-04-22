@@ -54,14 +54,14 @@ if (isset($_POST['title'])) {
     <input type="file" name="image" accept="image/jpeg, image/png" id="image">
     <label for="title">Название: <span class="req">*</span></label>
     <input type="text" name="title" id="title">
-    <label for="year">Год создания: <span class="req">*</span></label>
-    <input type="text" name="year" id="year">
     <label for="category">Категория: <span class="req">*</span></label>
     <select name="category" id="category">
       <option value="Графика">Графика</option>
       <option value="Пастель">Пастель</option>
       <option value="Акрил">Акрил</option>
     </select>
+    <label for="year">Год создания:</label>
+    <input type="text" name="year" id="year">
     <label for="technique">Материалы:</label>
     <input type="text" name="technique" id="technique">
     <label for="size">Размер:</label>
@@ -78,8 +78,7 @@ if (isset($_POST['title'])) {
       const form = document.forms['form'];
       const required = {
         image: 'Файл изображения',
-        title: 'Название',
-        year: 'Год создания'
+        title: 'Название'
       };
       for (const field in required) {
         if (form[field].value === '') {

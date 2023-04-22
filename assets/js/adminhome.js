@@ -77,11 +77,11 @@ if (akrilTitles.length > 0) {
 }
 const optionsString = optgroupHTMLArr.join('\n');
 const selects = `
-  <label for="pic1">Картина 1</label>
+  <label for="pic1">Картина 1:</label>
   <select id="pic1" name="pic1">${optionsString}</select>
-  <label for="pic2">Картина 2</label>
+  <label for="pic2">Картина 2:</label>
   <select id="pic2" name="pic2">${optionsString}</select>
-  <label for="pic3">Картина 3</label>
+  <label for="pic3">Картина 3:</label>
   <select id="pic3" name="pic3">${optionsString}</select>
 `;
 document.querySelector('form [type="submit"]').insertAdjacentHTML('beforebegin', selects);

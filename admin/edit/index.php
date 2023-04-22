@@ -117,14 +117,14 @@ else {
       <input type="file" name="image" id="image" accept="image/jpeg, image/png" class="image-input">
       <label for="title">Название: <span class="req">*</span></label>
       <input type="text" name="title" id="title" value="<?= $entry['title'] ?>">
-      <label for="year">Год создания: <span class="req">*</span></label>
-      <input type="text" name="year" id="year" value="<?= $entry['year'] ?>">
       <label for="category">Категория: <span class="req">*</span></label>
       <select name="category" id="category">
         <option value="Графика" <?php if ($entry['category'] === 'Графика') echo('selected') ?>>Графика</option>
         <option value="Пастель" <?php if ($entry['category'] === 'Пастель') echo('selected') ?>>Пастель</option>
         <option value="Акрил" <?php if ($entry['category'] === 'Акрил') echo('selected') ?>>Акрил</option>
       </select>
+      <label for="year">Год создания:</label>
+      <input type="text" name="year" id="year" value="<?= $entry['year'] ?>">
       <label for="technique">Материалы:</label>
       <input type="text" name="technique" id="technique" value="<?= $entry['technique'] ?>">
       <label for="size">Размер:</label>
@@ -142,8 +142,7 @@ else {
     function validateForm() {
       const form = document.forms['form'];
       const required = {
-        title: 'Название',
-        year: 'Год создания'
+        title: 'Название'
       };
       for (const field in required) {
         if (form[field].value === '') {

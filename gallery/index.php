@@ -111,6 +111,7 @@ $data_rem = array_slice($data, $load_at_start);
   <link rel="stylesheet" href="../assets/css/root.css">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/<?= $view ?>.css">
+  <link rel="stylesheet" href="../assets/css/tooltip.css">
   <script src="../assets/js/header.js" defer></script>
   <script src="../assets/js/loadimg.js"></script>
   <script>
@@ -150,9 +151,11 @@ $data_rem = array_slice($data, $load_at_start);
           }
         ?>
         <input type="hidden" name="change_view" value="true">
-        <button type="submit" title="<?= $change_view_btn_title ?>">
-          <?= $change_view_svg ?>
-        </button>
+        <button type="submit" id="change-view-btn"><?= $change_view_svg ?></button>
+        <div id="tooltip">
+          <?= $change_view_btn_title ?>
+          <div id="arrow" data-popper-arrow></div>
+        </div>
       </form>
       <button type="button" class="search-btn" title="Поиск">
         <svg class="zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
@@ -234,5 +237,7 @@ $data_rem = array_slice($data, $load_at_start);
     <script src="../assets/js/loadimgsgallery.js" defer></script>
   <?php endif ?>
   <?php require('../parts/footer.php') ?>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="../assets/js/tooltip.js" defer></script>
 </body>
 </html>
