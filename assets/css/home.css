@@ -40,6 +40,10 @@ main h2 {
   width: 100%;
 }
 
+.mdash {
+  margin: 0 2px;
+}
+
 @media screen and (max-width: 1024px) {
   main h1 {
     font-size: 27px;
@@ -56,3 +60,10 @@ main h2 {
     margin-bottom: 10px;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .greeting p {
+    display: inline;
+  }
+}
+

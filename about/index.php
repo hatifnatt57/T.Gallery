@@ -1,7 +1,7 @@
 <?php 
 require_once('../pdo.php');
 
-$stmt = $pdo->query('SELECT * FROM about');
+$stmt = $pdo->query('SELECT * FROM keyval');
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>

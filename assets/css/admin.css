@@ -13,7 +13,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 15px;
 }
 
 header a, header button {
@@ -183,6 +183,51 @@ li .ui button svg {
   display: none;
 }
 
+nav {
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: calc(0px - 2px - var(--navheight) * 2);
+  transition: top 0.2s;
+  border: dashed 2px var(--white);
+  border-top: none;
+  background-color: var(--bgr);
+}
+
+.nav__open {
+  top: var(--navheight);
+}
+
+.menu-btn--x, .menu-btn__x .menu-btn--bars {
+  display: none;
+}
+
+.menu-btn__x .menu-btn--x {
+  display: block;
+}
+
+.nav--item {
+  width: 100%;
+  height: var(--navheight);
+  color: var(--white);
+  font-family: 'PTRootUI', sans-serif;
+  font-size: 17px;
+  text-decoration: underline;
+  padding-left: 10px;
+  line-height: var(--navheight);
+  border-top: dashed 2px var(--white); 
+  border-bottom: dashed 2px var(--white); 
+}
+
+nav a:first-of-type .nav--item,
+nav a:last-of-type .nav--item {
+  border: none;
+}
+
+.nav--item:hover {
+  background-color: rgba(247, 247, 247, 0.2);
+}
+
 @media screen and (max-width: 1024px) {
   li:hover {
     background-color: transparent;
@@ -190,6 +235,10 @@ li .ui button svg {
 
   li .ui button:hover {
     opacity: 0.5;
+  }
+
+  header {
+    padding: 0 10px;
   }
 }
 

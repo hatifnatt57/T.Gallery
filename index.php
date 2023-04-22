@@ -1,8 +1,12 @@
 <?php 
 require_once('./pdo.php');
 
-$stmt = $pdo->query('SELECT * FROM pics ORDER BY orderint LIMIT 3');
+$stmt = $pdo->query("SELECT * FROM pics WHERE home_orderint IS NOT NULL ORDER BY home_orderint LIMIT 3");
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt = $pdo->query("SELECT val FROM keyval WHERE keyfield='home_rows'");
+$rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
+
 
 ?>
 <!DOCTYPE html>
@@ -21,8 +25,10 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="./assets/css/home.css">
   <script src="./assets/js/header.js" defer></script>
   <script src="./assets/js/loadimg.js"></script>
+  <script src="./libs/typograf.min.js"></script>
   <script>
     const data = <?= json_encode($data) ?>;
+    const rows = <?= $rows ?>;
   </script>
 </head>
 <body>
@@ -49,10 +55,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </header>
   <main>
     <h1>Виртуальная арт-галерея Олега Трактуева</h1>
-    <div class="greeting">
-      <p>Добро пожаловать, дорогие друзья и&nbsp;родственники!</p>
-      <p>Надеюсь, на&nbsp;этом сайте вы&nbsp;найдете ответы на&nbsp;вопросы типа: &laquo;Что нового нарисовал?&raquo;, &laquo;Как проводишь время на&nbsp;пенсии?&raquo; и&nbsp;т.&nbsp;д. Комментарии? Вы знаете, как и&nbsp;где меня найти.</p>
-    </div>
+    <div class="greeting"></div>
     <h2>Из недавнего</h2>
     <div class="imgs-container"></div>
   </main>
@@ -73,6 +76,16 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
       imgs.forEach(a => { imgsContainer.appendChild(a) });
     }
     loadImgs();
+
+    const tp = new Typograf({
+      locale: ['ru', 'en-US'],
+      htmlEntity: { type: 'name' }
+    });
+
+    const greeting = document.querySelector('.greeting');
+    greeting.innerHTML = rows
+    .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
+    .map(row => '<p>' + row + '</p>').join('\n');
   </script>
 </body>
 </html>

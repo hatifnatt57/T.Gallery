@@ -9,7 +9,7 @@ if ($_SESSION['logged_in'] !== 'true') {
 
 # GET
 if (!isset($_POST['text'])) {
-  $stmt = $pdo->query('SELECT * FROM about WHERE keyfield="text"');
+  $stmt = $pdo->query('SELECT * FROM keyval WHERE keyfield="text"');
   $textarr = $stmt->fetch(PDO::FETCH_ASSOC);
   if (count($textarr) > 0) {
     $textval = $textarr['val'];
