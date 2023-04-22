@@ -34,7 +34,7 @@ else {
     $pdo->prepare($query)->execute([$i, $title]);
   }
 
-  $_SESSION['success'] = 'Запись отредактирована!';
+  $_SESSION['success'] = 'Раздел отредактирован!';
   header('Location: ../../admin/');
   exit();
 }

@@ -21,7 +21,7 @@ if (!isset($_POST['text'])) {
 
 # POST
 if (isset($_POST['text'])) {
-  $query = "UPDATE about SET val=? WHERE keyfield='text'";
+  $query = "UPDATE keyval SET val=? WHERE keyfield='text'";
   $pdo->prepare($query)->execute([$_POST['text']]);
   # Image add/change
   if ($_FILES['image']['name'] !== '') {
@@ -42,7 +42,7 @@ if (isset($_POST['text'])) {
     $dest = "../../assets/imgs/about.$format";
     move_uploaded_file($image_tmp_name, $dest);
 
-    $query = "UPDATE about SET val=? WHERE keyfield='format'";
+    $query = "UPDATE keyval SET val=? WHERE keyfield='format'";
     $pdo->prepare($query)->execute([$format]);
   }
 

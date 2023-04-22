@@ -1,16 +1,23 @@
-.change-image-btn {
+.change-image-btn, .change-resourse-btn {
   background-color: var(--sand);
   margin-bottom: 20px;
 }
 
-.image-input {
+.image-input,
+#resourse,
+[for="resourse"] {
   display: none;
 }
 
-.form__adding-image .change-image-btn {
+.form__adding-image .change-image-btn,
+.form__adding-resourse .change-resourse-btn,
+.form__adding-resourse #resourse-url,
+.form__adding-resourse [for="resourse-url"] {
   display: none;
 }
 
-.form__adding-image .image-input {
+.form__adding-image .image-input,
+.form__adding-resourse #resourse,
+.form__adding-resourse [for="resourse"] {
   display: block;
 }

@@ -24,15 +24,16 @@ else if (isset($_POST['title'])) {
   if ($_FILES['image']['name'] !== '') {
     # Delete old
     $id = $_POST['id'];
-    $stmt = $pdo->prepare("SELECT format FROM pics WHERE id=?");
+    $stmt = $pdo->prepare("SELECT * FROM pics WHERE id=?");
     $stmt->execute([$id]);
-    $format = $stmt->fetch()['format'];
+    $entry = $stmt->fetch();
+    $format = $entry['format'];
     unlink("../../assets/pics/$id.$format");
     unlink("../../assets/icons/$id.$format");
     $stmt = $pdo->prepare("DELETE FROM pics WHERE id=?");
     $stmt->execute([$id]);
     # Add new
-    require('../../parts/addpic.php');
+    require('../../parts/addpicafteredit.php');
   }
   # No image change
   else {
@@ -117,14 +118,14 @@ else {
       <input type="file" name="image" id="image" accept="image/jpeg, image/png" class="image-input">
       <label for="title">Название: <span class="req">*</span></label>
       <input type="text" name="title" id="title" value="<?= $entry['title'] ?>">
+      <label for="year">Год создания: <span class="req">*</span></label>
+      <input type="text" name="year" id="year" value="<?= $entry['year'] ?>">
       <label for="category">Категория: <span class="req">*</span></label>
       <select name="category" id="category">
         <option value="Графика" <?php if ($entry['category'] === 'Графика') echo('selected') ?>>Графика</option>
         <option value="Пастель" <?php if ($entry['category'] === 'Пастель') echo('selected') ?>>Пастель</option>
         <option value="Акрил" <?php if ($entry['category'] === 'Акрил') echo('selected') ?>>Акрил</option>
       </select>
-      <label for="year">Год создания:</label>
-      <input type="text" name="year" id="year" value="<?= $entry['year'] ?>">
       <label for="technique">Материалы:</label>
       <input type="text" name="technique" id="technique" value="<?= $entry['technique'] ?>">
       <label for="size">Размер:</label>
@@ -142,7 +143,8 @@ else {
     function validateForm() {
       const form = document.forms['form'];
       const required = {
-        title: 'Название'
+        title: 'Название',
+        year: 'Год создания'
       };
       for (const field in required) {
         if (form[field].value === '') {
