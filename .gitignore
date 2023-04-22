@@ -2,6 +2,8 @@ assets/icons/*
 assets/pics/*
 assets/imgs/*
 assets/favicons/*
+assets/linkimgs/*
+assets/resourses/*
 backup
 libs
 node_modules
