@@ -132,7 +132,7 @@ ELEM;
     <a href="./about/">
       <div class="nav--item">Обо мне</div>
     </a>
-    <a href="#">
+    <a href="./notgallery/">
       <div class="nav--item">НеГалерея</div>
     </a>
   </nav>
