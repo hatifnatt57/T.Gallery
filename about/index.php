@@ -43,7 +43,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <a href="../gallery/?cat=grafika">Графика</a>
       <a href="../gallery/?cat=pastel">Пастель</a>
       <a href="../gallery/?cat=akril">Акрил</a>
-      <a href="#">НеГалерея</a>
+      <a href="../notgallery/">НеГалерея</a>
     </nav>
   </header>
   <main></main>

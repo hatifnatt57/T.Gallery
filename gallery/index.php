@@ -138,7 +138,7 @@ $data_rem = array_slice($data, $load_at_start);
       <a href="../gallery/?cat=grafika" <?= $cat === 'Графика' ? 'active' : '' ?>>Графика</a>
       <a href="../gallery/?cat=pastel" <?= $cat === 'Пастель' ? 'active' : '' ?>>Пастель</a>
       <a href="../gallery/?cat=akril" <?= $cat === 'Акрил' ? 'active' : '' ?>>Акрил</a>
-      <a href="#">НеГалерея</a>
+      <a href="../notgallery/">НеГалерея</a>
     </nav>
     <div class="header-buttons">
       <form action="../gallery/" method="post" class="change-view-form">

@@ -66,8 +66,13 @@ if (isset($_POST['text'])) {
         }
       };
       const fileInput = document.querySelector('#image');
-      if (fileInput.files[0].size > 10 * 1024 * 1024) {
-        alert('Размер файла изображения не должен превышать 10МБ!');
+      if (fileInput.files[0].size > 5 * 1024 * 1024) {
+        alert('Размер файла изображения не должен превышать 5МБ!');
+        return false;
+      };
+      const resourseInput = document.querySelector('#resourse');
+      if (resourseInput.files[0] && resourseInput.files[0].size > 5 * 1024 * 1024) {
+        alert('Размер файла документа не должен превышать 5МБ!');
         return false;
       }
     }

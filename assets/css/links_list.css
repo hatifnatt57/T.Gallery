@@ -1,0 +1,89 @@
+.results {
+  list-style-type: none;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: calc(var(--navheight) + 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.figure-container {
+  height: 120px;
+  border-radius: 10px;
+}
+
+.figure-container:hover {
+  background-color: rgba(247, 247, 247, 0.1);
+}
+
+.figure-container a {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+figure img {
+  max-width: 150px;
+  max-height: 100px;
+  border-radius: 10px;
+  margin-right: 25px;
+  position: absolute;
+  left: 75px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+figcaption {
+  font-family: 'PTRootUI', sans-serif;
+  font-weight: 400;
+  color: var(--white);
+  overflow: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  position: absolute;
+  left: 175px;
+  top: 0;
+}
+
+figcaption p:nth-child(2) {
+  margin-top: 1.2em;
+}
+
+.description {
+  font-style: italic;
+  font-size: 15px;
+}
+
+.mdash {
+  margin: 0 2px;
+}
+
+@media screen and (max-width: 1024px) {
+  .figure-container:hover {
+    background-color: transparent;
+  }
+
+  .results {
+    padding-top: var(--navheight);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  figcaption {
+    justify-content: flex-start;
+  }
+}
