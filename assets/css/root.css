@@ -5,6 +5,7 @@
   --bgr: #393e46;
   --green: #6d9886;
   --sand: #f2e7d5;
+  --maxwidth: 1400px;
 }
 
 @media screen and (max-width: 1024px) {

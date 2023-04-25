@@ -1,13 +1,13 @@
 main {
-  padding-top: calc(var(--navheight) + 30px);
-  width: 70%;
-  max-width: 1030px;
-  margin: 0 auto;
+  padding: calc(var(--navheight) + 30px) 32px 0;
+  max-width: 1094px;
   font-family: 'PTRootUI', sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: var(--white);
   text-align: justify;
+  display: flex;
+  align-items: flex-start;
 }
 
 main img {
@@ -31,22 +31,19 @@ main a {
 
 @media screen and (max-width: 1024px) {
   main {
-    padding-top: calc(var(--navheight) + 15px);
-    width: 95%;
+    padding: calc(var(--navheight) + 15px) 16px 0;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 760px) {
   main img {
     margin: 0 0 10px;
-    float: none;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 95%;
   }
 
-  main p {
-    clear: both;
+  main {
+    flex-direction: column;
   }
 }

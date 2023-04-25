@@ -16,7 +16,7 @@ async function loadImgs() {
     caption.appendChild(p2);
     let thirdLine;
     if (entry['technique'] !== '') {
-      thirdLine = entry['technique'] + ', ' + entry['category'].toLowerCase();
+      thirdLine = entry['technique'].trim() + ', ' + entry['category'].toLowerCase().trim();
     }
     else {
       thirdLine = entry['category'];

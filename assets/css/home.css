@@ -1,7 +1,8 @@
 main {
   color: var(--white);
   font-family: 'PTRootUI', sans-serif;
-  padding-top: var(--navheight);
+  padding: var(--navheight) 32px 0;
+  max-width: var(--maxwidth);
 }
 
 main h1 {
@@ -22,10 +23,11 @@ main h2 {
   text-align: center;
   margin: 50px auto 30px;
   text-transform: uppercase;
+  font-size: 21px;
 }
 
 .imgs-container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -33,7 +35,7 @@ main h2 {
 }
 
 .imgs-container a {
-  width: 32%;
+  width: 30%;
 }
 
 .imgs-container img {
@@ -56,8 +58,8 @@ main h2 {
   }
   
   .imgs-container a {
-    width: 100%;
-    margin-bottom: 10px;
+    width: 80%;
+    margin-bottom: 60px;
   }
 }
 

@@ -43,7 +43,7 @@ if (isset($_POST['text'])) {
     <input type="file" name="image" accept="image/jpeg, image/png" id="image">
     <label for="text">Описание: <span class="req">*</span></label>
     <textarea name="text" id="text" rows="5"></textarea>
-    <label for="resourse-url">URL внешнего ресурса: <span class="req">*</span></label>
+    <label for="resourse-url">URL внешнего ресурса (начиная с http): <span class="req">*</span></label>
     <input type="text" name="resourse_url" id="resourse-url">
     <label for="resourse">Файл документа: <span class="req">*</span></label>
     <input type="file" name="resourse" accept=".pdf" id="resourse">
@@ -76,6 +76,13 @@ if (isset($_POST['text'])) {
         return false;
       }
     }
+
+    const textarea = document.querySelector('#text');
+    textarea.addEventListener('input', function() {
+      if (this.value.length > 270) {
+        this.value = this.value.slice(0, 271);
+      }
+    });
   </script>
   <script>
     const changeImageBtn = document.querySelector('.change-resourse-btn');

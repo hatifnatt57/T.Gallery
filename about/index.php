@@ -64,7 +64,10 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
       const textHyphenated = hyphen.hyphenateHTMLSync(textTypografed);
       const main = document.querySelector('main');
       main.appendChild(img);
-      main.insertAdjacentHTML('beforeend', textHyphenated);
+      const text = document.createElement('div');
+      text.classList.add = 'text';
+      text.innerHTML = textHyphenated;
+      main.appendChild(text);
     }
     loadAbout();
   </script>

@@ -60,5 +60,13 @@ else {
     <input type="hidden" name="id" value="<?= $entry['id'] ?>">
     <button type="submit">Принять</button>
   </form>
+  <script>
+    const textarea = document.querySelector('#text');
+    textarea.addEventListener('input', function() {
+      if (this.value.length > 270) {
+        this.value = this.value.slice(0, 271);
+      }
+    });
+  </script>
 </body>
 </html>

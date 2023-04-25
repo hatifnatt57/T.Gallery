@@ -20,16 +20,17 @@ closeMenuBtn.addEventListener('click', closeMenu);
 if (document.querySelector('.search-btn')) {
   const openSearchBtn = document.querySelector('.search-btn');
   const closeSearchBtn = document.querySelector('.close-search-btn');
-  const searchEl = document.querySelector('.search-overlay');
-  const searchInput = searchEl.querySelector('input[type="text"]');
-
+  
   function openSearch() {
+    const searchEl = document.querySelector('.search-overlay');
+    const searchInput = searchEl.querySelector('input[type="text"]');
     searchEl.classList.add('search-overlay__open');
     document.body.classList.add('overflow-hidden');
     searchInput.focus();
   }
-
+  
   function closeSearch() {
+    const searchEl = document.querySelector('.search-overlay');
     searchEl.classList.remove('search-overlay__open');
     document.body.classList.remove('overflow-hidden');
   }

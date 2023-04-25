@@ -54,7 +54,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
     </nav>
   </header>
   <main>
-    <h1>Виртуальная арт-галерея Олега Трактуева</h1>
+    <h1>Виртуальная галерея Олега Трактуева</h1>
     <div class="greeting"></div>
     <h2>Из недавнего</h2>
     <div class="imgs-container"></div>
