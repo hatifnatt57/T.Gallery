@@ -58,6 +58,16 @@ ELEM;
   <link rel="stylesheet" href="../../assets/css/admin.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
   <script src="../../assets/js/message.js" defer></script>
+  <style>
+    .edit-text-link {
+      font-family: 'PTRootUI', sans-serif;
+      font-size: 25px;
+      color: var(--white);
+      display: block;
+      font-weight: 500;
+      position: absolute;
+    }
+  </style>
   <title>НеГалерея</title>
 </head>
 <body>
@@ -93,6 +103,7 @@ ELEM;
     </form>
   </header>
   <h3>НеГалерея</h3>
+  <!-- <a href="./edittext/" class="edit-text-link">Редактировать вступительный текст</a> -->
   <?php
     if (count($allLinks) === 0) {
       echo '<h3>Записей нет</h3>';

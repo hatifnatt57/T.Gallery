@@ -117,7 +117,7 @@ else {
       <label for="image" class="image-input">Файл изображения:</label>
       <input type="file" name="image" id="image" accept="image/jpeg, image/png" class="image-input">
       <label for="title">Название: <span class="req">*</span></label>
-      <input type="text" name="title" id="title" value="<?= $entry['title'] ?>">
+      <input type="text" name="title" id="title" value="<?= htmlentities($entry['title']) ?>">
       <label for="year">Год создания: <span class="req">*</span></label>
       <input type="text" name="year" id="year" value="<?= $entry['year'] ?>">
       <label for="category">Категория: <span class="req">*</span></label>
@@ -130,7 +130,7 @@ else {
       <input type="text" name="technique" id="technique" value="<?= $entry['technique'] ?>">
       <label for="size">Размер:</label>
       <input type="text" name="size" id="size" value="<?= $entry['size'] ?>">
-      <label for="description">Описание:</label>
+      <label for="description">Комментарий:</label>
       <textarea name="description" id="description" rows="5"><?= $entry['description'] ?></textarea>
       <input type="hidden" name="id" value="<?= $entry['id'] ?>">
       <button type="submit">Принять</button>

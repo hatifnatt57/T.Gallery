@@ -43,11 +43,6 @@ if (isset($_POST['text'])) {
     <input type="file" name="image" accept="image/jpeg, image/png" id="image">
     <label for="text">Описание: <span class="req">*</span></label>
     <textarea name="text" id="text" rows="5"></textarea>
-    <label for="resourse-url">URL внешнего ресурса (начиная с http): <span class="req">*</span></label>
-    <input type="text" name="resourse_url" id="resourse-url">
-    <label for="resourse">Файл документа: <span class="req">*</span></label>
-    <input type="file" name="resourse" accept=".pdf" id="resourse">
-    <button type="button" class="change-resourse-btn">Прикрепить документ</button>
     <button type="submit">Добавить запись</button>
   </form>
   <script>
@@ -66,31 +61,18 @@ if (isset($_POST['text'])) {
         }
       };
       const fileInput = document.querySelector('#image');
-      if (fileInput.files[0].size > 5 * 1024 * 1024) {
-        alert('Размер файла изображения не должен превышать 5МБ!');
+      if (fileInput.files[0].size > 10 * 1024 * 1024) {
+        alert('Размер файла изображения не должен превышать 10МБ!');
         return false;
       };
-      const resourseInput = document.querySelector('#resourse');
-      if (resourseInput.files[0] && resourseInput.files[0].size > 5 * 1024 * 1024) {
-        alert('Размер файла документа не должен превышать 5МБ!');
-        return false;
-      }
     }
 
-    const textarea = document.querySelector('#text');
-    textarea.addEventListener('input', function() {
-      if (this.value.length > 270) {
-        this.value = this.value.slice(0, 271);
-      }
-    });
-  </script>
-  <script>
-    const changeImageBtn = document.querySelector('.change-resourse-btn');
-    const form = document.querySelector('form');
-    changeImageBtn.addEventListener('click', () => {
-      form.classList.add('form__adding-resourse');
-      document.querySelector('#resourse-url').value = '';
-    });
+    // const textarea = document.querySelector('#text');
+    // textarea.addEventListener('input', function() {
+    //   if (this.value.length > 270) {
+    //     this.value = this.value.slice(0, 271);
+    //   }
+    // });
   </script>
 </body>
 </html>

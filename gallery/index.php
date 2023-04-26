@@ -190,7 +190,6 @@ $data_rem = array_slice($data, $load_at_start);
               $pic['title'],
               $pic['year'],
               $pic['technique'],
-              $pic['category'],
               $pic['size']
             );
             $first_line = join(' &middot; ', array_filter($picmeta, 'notempty'));
@@ -203,12 +202,8 @@ $data_rem = array_slice($data, $load_at_start);
             echo("<p class=\"pic-title\">{$pic['title']}</p>");
             echo("<p>{$pic['year']}</p>");
             if (notempty($pic['technique'])) {
-              $second_line = $pic['technique'].', '.strtolower($pic['category']);
+              echo("<p>{$pic['technique']}</p>");
             }
-            else {
-              $second_line = $pic['category'];
-            }
-            echo("<p>$second_line</p>");
             if (notempty($pic['size'])) {
               echo("<p>{$pic['size']}</p>");
             }

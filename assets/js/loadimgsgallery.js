@@ -16,14 +16,13 @@ async function loadImgs() {
     caption.appendChild(p2);
     let thirdLine;
     if (entry['technique'] !== '') {
-      thirdLine = entry['technique'].trim() + ', ' + entry['category'].toLowerCase().trim();
+      const p3 = document.createElement('p');
+      p3.innerHTML = entry['technique'];
+      caption.appendChild(p3);
     }
     else {
       thirdLine = entry['category'];
     }
-    const p3 = document.createElement('p');
-    p3.innerHTML = thirdLine;
-    caption.appendChild(p3);
     if (entry['size'] !== '') {
       const p4 = document.createElement('p');
       p4.innerHTML = entry['size'];

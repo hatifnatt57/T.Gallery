@@ -5,7 +5,6 @@ async function loadImgs() {
       entry['title'],
       entry['year'],
       entry['technique'],
-      entry['category'],
       entry['size'],
     ];
     const img = await loadImg(`../../assets/icons/${entry['id']}.${entry['format']}`);

@@ -21,11 +21,6 @@ if (isset($_POST['id'])) {
   $filename = $entry['id'].'.'.$entry['format'];
   unlink("../../../assets/linkimgs/$filename");
 
-  # Unlink resourse if local
-  if (strpos($entry['resourse_url'], 'http') !== 0) {
-    unlink("../../../assets/resourses/{$entry['resourse_url']}");
-  }
-
   $_SESSION['success'] = 'Запись удалена!';
 }
 

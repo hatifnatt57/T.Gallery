@@ -4,6 +4,9 @@ require_once('../pdo.php');
 $stmt = $pdo->query("SELECT * FROM links ORDER BY orderint");
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt = $pdo->query("SELECT val FROM keyval WHERE keyfield='notgallery_rows'");
+$rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -18,6 +21,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="../assets/css/root.css">
   <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/list.css">
   <link rel="stylesheet" href="../assets/css/links_list.css">
   <script src="../assets/js/header.js" defer></script>
   <script src="../assets/js/loadimg.js"></script>
@@ -25,6 +29,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script src="../libs/marked.min.js"></script>
   <script>
     const data = <?= json_encode($data) ?>;
+    const rows = <?= $rows ?>
   </script>
 </head>
 <body>
@@ -50,19 +55,44 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </nav>
   </header>
   <main>
-    <!-- Server data rendering -->
-  <?php if (count($data) === 0): ?>
-  <h2 class="nothing-found-heading">Тут ничего нет 🙁</h2>
-  <?php else: ?>
+  <div class="greeting"></div>
   <ul class="results"></ul>
-  <?php endif ?>
   </main>
   <?php require('../parts/footer.php') ?>
+  <!-- Zoom -->
+  <div class="zoom-overlay">
+    <button class="close-zoom-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+    </button>
+  </div>
+  <!-- Async data rendering / Zoom -->
   <script>
     const tp = new Typograf({
       locale: ['ru', 'en-US'],
       htmlEntity: { type: 'name' }
     });
+
+    const zoomOverlay = document.querySelector('.zoom-overlay');
+    const closeZoomBtn = document.querySelector('.close-zoom-btn');
+
+    closeZoomBtn.addEventListener('click', function() {
+      zoomOverlay.style.opacity = '0';
+      document.body.classList.remove('overflow-hidden');
+      setTimeout(() => {
+        zoomOverlay.style.display = 'none';
+        const img = zoomOverlay.querySelector('img');
+        zoomOverlay.removeChild(img);
+        }, 200);
+    });
+
+    function handleIconClick() {
+      zoomOverlay.appendChild(this.cloneNode());
+      document.body.classList.add('overflow-hidden');
+      zoomOverlay.style.display = 'flex';
+      // Read operation to trigger reflow
+      document.body.offsetHeight;
+      zoomOverlay.style.opacity = '1';
+    }
 
     async function createElements() {
       const ul = document.querySelector('.results');
@@ -71,33 +101,25 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         const entry = data[i];
         const src = '../assets/linkimgs/'+ entry['id'] + '.' + entry['format'];
         const img = await loadImg(src);
+        img.addEventListener('click', handleIconClick);
         const figcaption = document.createElement('figcaption');
         const markedText = marked.parse(entry['text']).replace(/\n/g, ' ');
         figcaption.innerHTML = tp.execute(markedText).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>');
         const figure = document.createElement('figure');
         figure.appendChild(img);
         figure.appendChild(figcaption);
-        const a = document.createElement('a');
-        a.appendChild(figure);
-        const resoursePath = '../assets/resourses/';
-        if (entry['resourse_url'].indexOf('http') === 0) {
-          a.href = entry['resourse_url'];
-        }
-        else {
-          a.href = resoursePath + entry['resourse_url'];
-        }
         const li = document.createElement('li');
         li.classList.add('figure-container');
-        li.appendChild(a);
+        li.appendChild(figure);
         ul.appendChild(li);
       }
     }
     createElements();
 
-    // const greeting = document.querySelector('.greeting');
-    // greeting.innerHTML = rows
-    // .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
-    // .map(row => '<p>' + row + '</p>').join('\n');
+    const greeting = document.querySelector('.greeting');
+    greeting.innerHTML = rows
+    .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
+    .map(row => '<p>' + row + '</p>').join('\n');
   </script>
 </body>
 </html>

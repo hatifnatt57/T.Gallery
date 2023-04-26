@@ -66,7 +66,7 @@ if (isset($_POST['title'])) {
     <input type="text" name="technique" id="technique">
     <label for="size">Размер:</label>
     <input type="text" name="size" id="size">
-    <label for="description">Описание:</label>
+    <label for="description">Комментарий:</label>
     <textarea name="description" id="description" rows="5"></textarea>
     <button type="submit">Добавить</button>
   </form>
