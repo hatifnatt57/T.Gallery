@@ -31,8 +31,7 @@ figure img {
   height: 100%;
   border-radius: 10px;
   margin-right: 25px;
-  /* cursor: url(../imgs/magnifying-glass-cursor.svg) 12 12, zoom-in; */
-  cursor: zoom-in;
+  cursor: url(../imgs/magnifying-glass-cursor.png) 12 12, zoom-in;
 }
 
 figcaption {

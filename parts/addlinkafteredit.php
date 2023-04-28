@@ -8,17 +8,20 @@ else $format = 'png';
 
 $data = [
   'format' => $format,
-  'text' => $_POST['text']
+  'text' => $_POST['text'],
+  'orderint' => $orderint
 ];
 $query = "INSERT INTO links
 (
   format,
-  text
+  text,
+  orderint
 )
 VALUES
 (
   :format,
-  :text
+  :text,
+  :orderint
 )
 ";
 $pdo->prepare($query)->execute($data);

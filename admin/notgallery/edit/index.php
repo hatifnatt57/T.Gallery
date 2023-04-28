@@ -20,8 +20,26 @@ if (isset($_GET['id'])) {
 }
 # POST
 else if (isset($_POST['text'])) {
-  $query = "UPDATE links SET text=? WHERE id=?";
-  $pdo->prepare($query)->execute([$_POST['text'], $_POST['id']]);
+  # Image change
+  if ($_FILES['image']['name'] !== '') {
+    # Delete old
+    $id = $_POST['id'];
+    $stmt = $pdo->prepare("SELECT * FROM links WHERE id=?");
+    $stmt->execute([$id]);
+    $entry = $stmt->fetch();
+    $format = $entry['format'];
+    $orderint = $entry['orderint'];
+    unlink("../../../assets/linkimgs/$id.$format");
+    $stmt = $pdo->prepare("DELETE FROM links WHERE id=?");
+    $stmt->execute([$id]);
+    # Add new
+    require('../../../parts/addlinkafteredit.php');
+  }
+  # No image change
+  else {
+    $query = "UPDATE links SET text=? WHERE id=?";
+    $pdo->prepare($query)->execute([$_POST['text'], $_POST['id']]);
+  }
 
   $_SESSION['success'] = 'Запись отредактирована!';
   header('Location: ../');
@@ -54,7 +72,10 @@ else {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM231 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L376 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-182.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L119 273c-9.4-9.4-9.4-24.6 0-33.9L231 127z"/></svg>
   </a>
   <h2>Редактирование записи</h2>
-  <form action="./" method="post" spellcheck="false" name="form">
+  <form action="./" method="post" enctype="multipart/form-data" spellcheck="false" name="form">
+    <button type="button" class="change-image-btn">Заменить изображение</button>
+    <label for="image" class="change-image-ui">Файл изображения: <span class="req">*</span></label>
+    <input type="file" name="image" accept="image/jpeg, image/png" id="image" class="change-image-ui">
     <label for="text">Описание: <span class="req">*</span></label>
     <textarea name="text" id="text" rows="5"><?= $entry['text'] ?></textarea>
     <input type="hidden" name="id" value="<?= $entry['id'] ?>">
@@ -68,5 +89,6 @@ else {
       }
     });
   </script>
+  <script src="../../../assets/js/changeimageui.js" defer></script>
 </body>
 </html>

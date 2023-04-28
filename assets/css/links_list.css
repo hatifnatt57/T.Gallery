@@ -23,6 +23,7 @@ figure img {
   max-height: 200px;
   width: unset;
   height: unset;
+  cursor: url(../imgs/magnifying-glass-cursor.png) 12 12, zoom-in;
 }
 
 figcaption {
@@ -33,6 +34,15 @@ figcaption {
   top: 0;
 }
 
+figcaption a {
+  color: var(--sand);
+  text-decoration: underline;
+}
+
+.mdash {
+  margin: 0 2px;
+}
+
 main {
   color: var(--white);
   font-family: 'PTRootUI', sans-serif;
@@ -41,10 +51,9 @@ main {
 }
 
 .greeting {
-  font-size: 20px;
+  font-size: 22px;
   width: 95%;
-  max-width: 650px;
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
 

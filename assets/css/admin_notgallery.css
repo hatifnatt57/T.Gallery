@@ -1,3 +1,11 @@
 form textarea {
   resize: both;
 }
+
+.change-image-ui {
+  display: none;
+}
+
+.form__adding-image .change-image-ui {
+  display: block;
+}
