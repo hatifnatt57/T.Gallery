@@ -32,3 +32,24 @@ figcaption {
   left: 225px;
   top: 0;
 }
+
+main {
+  color: var(--white);
+  font-family: 'PTRootUI', sans-serif;
+  padding: calc(var(--navheight) + 32px) 32px 0;
+  max-width: var(--maxwidth);
+}
+
+.greeting {
+  font-size: 20px;
+  width: 95%;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+  .greeting p {
+    display: inline;
+  }
+}

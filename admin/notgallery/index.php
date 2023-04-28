@@ -61,11 +61,15 @@ ELEM;
   <style>
     .edit-text-link {
       font-family: 'PTRootUI', sans-serif;
-      font-size: 25px;
+      font-size: 20px;
       color: var(--white);
-      display: block;
+      display: inline-block;
       font-weight: 500;
-      position: absolute;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      text-decoration: underline;
+      margin: 30px 0;
     }
   </style>
   <title>НеГалерея</title>
@@ -103,7 +107,7 @@ ELEM;
     </form>
   </header>
   <h3>НеГалерея</h3>
-  <!-- <a href="./edittext/" class="edit-text-link">Редактировать вступительный текст</a> -->
+  <a href="./edittext/" class="edit-text-link">Редактировать вступительный текст</a>
   <?php
     if (count($allLinks) === 0) {
       echo '<h3>Записей нет</h3>';

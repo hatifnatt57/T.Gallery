@@ -241,7 +241,7 @@ body {
 
 body > * {
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--maxwidth);
 }
 
 @media screen and (max-width: 1150px) {

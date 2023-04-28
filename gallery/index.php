@@ -234,5 +234,16 @@ $data_rem = array_slice($data, $load_at_start);
   <?php require('../parts/footer.php') ?>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="../assets/js/tooltip.js" defer></script>
+  <script>
+    const textInput = document.querySelector('input[name="q"]');
+    if (textInput) {
+      const limit = 100;
+      textInput.addEventListener('input', function() {
+        if (this.value.length > limit) {
+          this.value = this.value.slice(0, limit + 1);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
