@@ -127,11 +127,11 @@ else {
         <option value="Акрил" <?php if ($entry['category'] === 'Акрил') echo('selected') ?>>Акрил</option>
       </select>
       <label for="technique">Материалы:</label>
-      <input type="text" name="technique" id="technique" value="<?= $entry['technique'] ?>">
+      <input type="text" name="technique" id="technique" value="<?= htmlentities($entry['technique']) ?>">
       <label for="size">Размер:</label>
-      <input type="text" name="size" id="size" value="<?= $entry['size'] ?>">
+      <input type="text" name="size" id="size" value="<?= htmlentities($entry['size']) ?>">
       <label for="description">Комментарий:</label>
-      <textarea name="description" id="description" rows="5"><?= $entry['description'] ?></textarea>
+      <textarea name="description" id="description" rows="5"><?= htmlentities($entry['description']) ?></textarea>
       <input type="hidden" name="id" value="<?= $entry['id'] ?>">
       <button type="submit">Принять</button>
     </form>

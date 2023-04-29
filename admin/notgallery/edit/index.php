@@ -77,7 +77,7 @@ else {
     <label for="image" class="change-image-ui">Файл изображения: <span class="req">*</span></label>
     <input type="file" name="image" accept="image/jpeg, image/png" id="image" class="change-image-ui">
     <label for="text">Описание: <span class="req">*</span></label>
-    <textarea name="text" id="text" rows="5"><?= $entry['text'] ?></textarea>
+    <textarea name="text" id="text" rows="5"><?= htmlentities($entry['text']) ?></textarea>
     <input type="hidden" name="id" value="<?= $entry['id'] ?>">
     <button type="submit">Принять</button>
   </form>

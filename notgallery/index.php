@@ -82,16 +82,28 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
         zoomOverlay.style.display = 'none';
         const img = zoomOverlay.querySelector('img');
         zoomOverlay.removeChild(img);
-        }, 200);
+      }, 200);
     });
 
+    // Loading flag
+    let loading = false;
+
     function handleIconClick() {
-      zoomOverlay.appendChild(this.cloneNode());
-      document.body.classList.add('overflow-hidden');
-      zoomOverlay.style.display = 'flex';
-      // Read operation to trigger reflow
-      document.body.offsetHeight;
-      zoomOverlay.style.opacity = '1';
+      if (loading) {
+        return;
+      }
+      const pic = new Image();
+      pic.onload = function() {
+        loading = false;
+        zoomOverlay.appendChild(pic);
+        document.body.classList.add('overflow-hidden');
+        zoomOverlay.style.display = 'flex';
+        // Read operation to trigger reflow
+        document.body.offsetHeight;
+        zoomOverlay.style.opacity = '1';
+      }
+      pic.src = this.src;
+      loading = true;
     }
 
     async function createElements() {
@@ -118,6 +130,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
 
     const greeting = document.querySelector('.greeting');
     greeting.innerHTML = rows
+    .map(row => marked.parse(row).replace(/\n/g, ''))
     .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
     .map(row => '<p>' + row + '</p>').join('\n');
   </script>

@@ -57,6 +57,11 @@ main {
   text-align: center;
 }
 
+.greeting a {
+  color: var(--sand);
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 760px) {
   .greeting p {
     display: inline;

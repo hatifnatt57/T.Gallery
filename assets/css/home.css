@@ -31,7 +31,7 @@ main h2 {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .imgs-container a {

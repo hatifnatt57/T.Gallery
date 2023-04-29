@@ -2,7 +2,7 @@
 function getRowHTML(content, n) {
   return `
     <label for="row${n}">Строка ${n}:</label>
-    <input type="text" class="input-row" name="row${n}" id="row${n}" value="${content}">
+    <input type="text" class="input-row" name="row${n}" id="row${n}" value="${content.replace(/"/g, '&quot;')}">
   `;
 }
 
