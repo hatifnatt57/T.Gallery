@@ -65,7 +65,8 @@ else {
   <link rel="stylesheet" href="../../../assets/css/add.css">
   <link rel="stylesheet" href="../../../assets/css/edit.css">
   <link rel="stylesheet" href="../../../assets/css/admin_notgallery.css">
-  <title>Редактирование записи</title>
+  <link rel="stylesheet" href="../../../assets/css/legend.css">
+  <title>Редактирование записи в НеГалерее | T.Gallery</title>
 </head>
 <body>
   <a href="../" class="back-link">
@@ -79,8 +80,20 @@ else {
     <label for="text">Описание: <span class="req">*</span></label>
     <textarea name="text" id="text" rows="5"><?= htmlentities($entry['text']) ?></textarea>
     <input type="hidden" name="id" value="<?= $entry['id'] ?>">
-    <button type="submit">Принять</button>
+    <div class="buttons-low">
+      <button type="submit">Принять</button>
+      <button type="button" class="legend-btn">Легенда</button>
+    </div>
   </form>
+  <div class="legend-overlay">
+    <p>*<em>текст курсивом</em>*</p>
+    <p>**<strong>жирный текст</strong>**</p>
+    <p>***<strong><em>текст жирным курсивом</em></strong>***</p>
+    <p>[текст ссылки](url "подсказка")</p>
+    <p>Например: Для перехода в гугл нажмите [сюда](https://google.com/ "Это гугл")</p>
+    <p>Параграфы отделять двумя энтерами</p>
+    <button type="button" class="close-overlay-btn">ОК</button>
+  </div>
   <script>
     const textarea = document.querySelector('#text');
     textarea.addEventListener('input', function() {
@@ -90,5 +103,6 @@ else {
     });
   </script>
   <script src="../../../assets/js/changeimageui.js" defer></script>
+  <script src="../../../assets/js/adminabout.js" defer></script>
 </body>
 </html>

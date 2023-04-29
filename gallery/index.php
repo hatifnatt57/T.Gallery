@@ -103,7 +103,7 @@ $data_rem = array_slice($data, $load_at_start);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#393e46">
-  <title>Галерея</title>
+  <title>Галерея | T.Gallery</title>
   <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../assets/css/fonts.css">

@@ -88,7 +88,7 @@ ELEM;
   <link rel="stylesheet" href="../assets/css/admin.css">
   <link rel="stylesheet" href="../assets/css/message.css">
   <script src="../assets/js/message.js" defer></script>
-  <title>Администрация</title>
+  <title>Администрация | T.Gallery</title>
 </head>
 <body>
   <?php

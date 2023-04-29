@@ -72,7 +72,7 @@ ELEM;
       margin: 30px 0;
     }
   </style>
-  <title>НеГалерея</title>
+  <title>Редактирование раздела НеГалерея | T.Gallery</title>
 </head>
 <body>
   <?php

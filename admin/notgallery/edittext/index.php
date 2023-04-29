@@ -39,7 +39,8 @@ else {
   <link rel="stylesheet" href="../../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../../assets/css/add.css">
   <link rel="stylesheet" href="../../../assets/css/home_edit.css">
-  <title>Редактирование текста в НеГалерее</title>
+  <link rel="stylesheet" href="../../../assets/css/legend.css">
+  <title>Редактирование текста в НеГалерее | T.Gallery</title>
 </head>
 <body>
   <a href="../" class="back-link">
@@ -51,13 +52,26 @@ else {
       <button type="button" class="create-new-row-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
       </button>
-      <button type="submit">Принять</button>
+      <div class="buttons-low">
+        <button type="submit">Принять</button>
+        <button type="button" class="legend-btn">Легенда</button>
+      </div>
     </form>
+  </div>
+  <div class="legend-overlay">
+    <p>*<em>текст курсивом</em>*</p>
+    <p>**<strong>жирный текст</strong>**</p>
+    <p>***<strong><em>текст жирным курсивом</em></strong>***</p>
+    <p>[текст ссылки](url "подсказка")</p>
+    <p>Например: Для перехода в гугл нажмите [сюда](https://google.com/ "Это гугл")</p>
+    <p>Параграфы отделять двумя энтерами</p>
+    <button type="button" class="close-overlay-btn">ОК</button>
   </div>
   <script>
     // Data
     const rows = <?= $rows ?>;
   </script>
   <script src="../../../assets/js/adminnotgallerytext.js" defer></script>
+  <script src="../../../assets/js/adminabout.js" defer></script>
 </body>
 </html>

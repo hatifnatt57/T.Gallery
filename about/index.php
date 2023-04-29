@@ -11,7 +11,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#393e46">
-  <title>Обо мне</title>
+  <title>Обо мне | T.Gallery</title>
   <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../assets/css/fonts.css">
@@ -59,7 +59,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         locale: ['ru', 'en-US'],
         htmlEntity: { type: 'name' }
       });
-      const textMarked = marked.parse(textRaw).replace(/\n/g, ' ');
+      const textMarked = marked.parse(textRaw).replace(/\n/g, ' ').replace(/<a/g, '<a target="_blank"');
       const textTypografed = tp.execute(textMarked).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>');
       const textHyphenated = hyphen.hyphenateHTMLSync(textTypografed);
       const main = document.querySelector('main');

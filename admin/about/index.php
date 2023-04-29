@@ -64,7 +64,8 @@ if (isset($_POST['text'])) {
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/about_edit.css">
-  <title>Редактирование раздела &laquo;Обо мне&raquo;</title>
+  <link rel="stylesheet" href="../../assets/css/legend.css">
+  <title>Редактирование раздела &laquo;Обо мне&raquo; | T.Gallery</title>
 </head>
 <body>
   <a href="../../admin/" class="back-link">

@@ -38,7 +38,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
   <link rel="stylesheet" href="../../assets/css/login.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
   <script src="../../assets/js/message.js" defer></script>
-  <title>Авторизация</title>
+  <title>Авторизация | T.Gallery</title>
 </head>
 <body>
   <?php

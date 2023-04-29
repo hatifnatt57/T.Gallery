@@ -14,7 +14,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#393e46">
-  <title>Галерея</title>
+  <title>НеГалерея | T.Gallery</title>
   <link rel="icon" type="image/jpeg" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../assets/css/fonts.css">
@@ -115,7 +115,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
         const img = await loadImg(src);
         img.addEventListener('click', handleIconClick);
         const figcaption = document.createElement('figcaption');
-        const markedText = marked.parse(entry['text']).replace(/\n/g, ' ');
+        const markedText = marked.parse(entry['text']).replace(/\n/g, ' ').replace(/<a/g, '<a target="_blank"');
         figcaption.innerHTML = tp.execute(markedText).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>');
         const figure = document.createElement('figure');
         figure.appendChild(img);
@@ -130,7 +130,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
 
     const greeting = document.querySelector('.greeting');
     greeting.innerHTML = rows
-    .map(row => marked.parse(row).replace(/\n/g, ''))
+    .map(row => marked.parse(row).replace(/\n/g, '')).replace(/<a/g, '<a target="_blank"')
     .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
     .map(row => '<p>' + row + '</p>').join('\n');
   </script>

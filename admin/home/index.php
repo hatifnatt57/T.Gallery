@@ -52,7 +52,7 @@ else {
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/add.css">
   <link rel="stylesheet" href="../../assets/css/home_edit.css">
-  <title>Редактирование главной страницы</title>
+  <title>Редактирование главной страницы | T.Gallery</title>
 </head>
 <body>
   <a href="../../admin/" class="back-link">

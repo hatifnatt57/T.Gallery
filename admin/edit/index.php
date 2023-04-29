@@ -93,7 +93,7 @@ else {
   <script src="../../assets/js/loadimg.js"></script>
   <script src="../../assets/js/changeimageui.js" defer></script>
   <script src="../../assets/js/message.js" defer></script>
-  <title>Редактирование записи</title>
+  <title>Редактирование записи | T.Gallery</title>
 </head>
 <body>
   <?php

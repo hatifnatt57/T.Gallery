@@ -31,7 +31,7 @@ if (isset($_POST['text'])) {
   <link rel="stylesheet" href="../../../assets/css/add.css">
   <link rel="stylesheet" href="../../../assets/css/edit.css">
   <link rel="stylesheet" href="../../../assets/css/admin_notgallery.css">
-  <title>Добавление записи</title>
+  <title>Добавление записи в НеГалерею | T.Gallery</title>
 </head>
 <body>
   <a href="../" class="back-link">
