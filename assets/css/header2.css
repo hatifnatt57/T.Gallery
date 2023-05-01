@@ -50,6 +50,10 @@ header svg {
   display: none;
 }
 
+.header-home-link {
+  display: none;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -349,5 +353,9 @@ body > * {
   .nothing-found-heading {
     padding-top: calc(var(--navheight) + 30px);
     width: 95%;
+  }
+
+  .header-home-link {
+    display: block;
   }
 }

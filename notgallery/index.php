@@ -20,9 +20,9 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="../assets/css/root.css">
-  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/header2.css">
   <link rel="stylesheet" href="../assets/css/list.css">
-  <link rel="stylesheet" href="../assets/css/links_list.css">
+  <link rel="stylesheet" href="../assets/css/links_list2.css">
   <script src="../assets/js/header.js" defer></script>
   <script src="../assets/js/loadimg.js"></script>
   <script src="../libs/typograf.min.js"></script>
@@ -47,6 +47,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
       <button type="button" class="close-menu-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
       </button>
+      <a href="../" class="header-home-link">Домой</a>
       <a href="../about/">Обо мне</a>
       <a href="../gallery/?cat=grafika">Графика</a>
       <a href="../gallery/?cat=pastel">Пастель</a>
@@ -130,7 +131,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
 
     const greeting = document.querySelector('.greeting');
     greeting.innerHTML = rows
-    .map(row => marked.parse(row).replace(/\n/g, '')).replace(/<a/g, '<a target="_blank"')
+    .map(row => marked.parse(row).replace(/\n/g, '').replace(/<a/g, '<a target="_blank"'))
     .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
     .map(row => '<p>' + row + '</p>').join('\n');
   </script>

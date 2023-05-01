@@ -1,7 +1,6 @@
 .results {
   gap: 30px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 50px 10px;
 }
 
 .figure-container {
@@ -20,7 +19,6 @@ figure {
 
 figure img {
   max-width: 200px;
-  max-height: 200px;
   width: unset;
   height: unset;
   cursor: url(../imgs/magnifying-glass-cursor.png) 12 12, zoom-in;
@@ -29,9 +27,6 @@ figure img {
 figcaption {
   display: block;
   white-space: initial;
-  position: absolute;
-  left: 225px;
-  top: 0;
 }
 
 figcaption a {
@@ -62,8 +57,25 @@ main {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 1024px) {
+  main {
+    padding: calc(var(--navheight) + 32px) 16px 0;
+  }
+
+  .results {
+    padding: 50px 0;
+  }
+
+}
+
 @media screen and (max-width: 760px) {
   .greeting p {
     display: inline;
+  }  
+}
+
+@media screen and (max-width: 550px) {
+  figure img {
+    max-width: 150px;
   }
 }
