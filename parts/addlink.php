@@ -1,36 +1,53 @@
 <?php
 $image_name = $_FILES['image']['name'];
 $image_tmp_name = $_FILES['image']['tmp_name'];
+$image = imagecreatefromstring(file_get_contents($image_tmp_name));
+$exif = exif_read_data($image_tmp_name);
+if(!empty($exif['Orientation'])) {
+  switch($exif['Orientation']) {
+    case 8:
+      $image = imagerotate($image,90,0);
+      break;
+    case 3:
+      $image = imagerotate($image,180,0);
+      break;
+    case 6:
+      $image = imagerotate($image,-90,0);
+      break;
+  }
+}
 $format;
 if (strpos($image_name, '.jpg') !== false
 || strpos($image_name, '.jpeg') !== false) $format = 'jpg';
 else $format = 'png';
 
+if (!$orderint) {
+  $orderint = 0;
+}
+
 $data = [
   'format' => $format,
-  'text' => $_POST['text']
+  'text' => $_POST['text'],
+  'orderint' => $orderint
 ];
 $query = "INSERT INTO links
 (
   format,
-  text
+  text,
+  orderint
 )
 VALUES
 (
   :format,
-  :text
+  :text,
+  :orderint
 )
 ";
 $pdo->prepare($query)->execute($data);
 $id = $pdo->lastInsertId();
 
-$dest = "../../../assets/tmp/$id.$format";
-move_uploaded_file($image_tmp_name, $dest);
-$size = getimagesize($dest);
-$widthor = $size[0];
-$heightor = $size[1];
-$width = $widthor;
-$height = $heightor;
+$width = imagesx($image);
+$height = imagesy($image);
 $coef = $height / $width;
 if ($width < 1920 && $height < 1080) {
   //
@@ -45,16 +62,13 @@ else {
     $width = $height / $coef;
   }
 }
+$image_scaled = imagescale($image, $width);
+
 if ($format === 'jpg') {
-  $im = imagecreatefromjpeg($dest);
-  $im_pic = imagescale($im, $width);
-  imagejpeg($im_pic, "../../../assets/linkimgs/$id.$format");
+  imagejpeg($image_scaled, "../../../assets/linkimgs/$id.$format");
 }
 else {
-  $im = imagecreatefrompng($dest);
-  $im_pic = imagescale($im, $width);
-  imagepng($im_pic, "../../../assets/linkimgs/$id.$format");
+  imagepng($image_scaled, "../../../assets/linkimgs/$id.$format");
 }
-unlink($dest);
-imagedestroy($im);
+imagedestroy($image);
 ?>

@@ -17,7 +17,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="../assets/css/root.css">
-  <link rel="stylesheet" href="../assets/css/header2.css">
+  <link rel="stylesheet" href="../assets/css/header3.css">
   <link rel="stylesheet" href="../assets/css/about.css">
   <script src="../assets/js/header.js" defer></script>
   <script src="../assets/js/loadimg.js"></script>

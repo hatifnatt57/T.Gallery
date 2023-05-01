@@ -304,13 +304,13 @@ body > * {
     z-index: 2;
     transition: left 0.3s ease-out;
     justify-content: center;
-    gap: 3%;
     transform: none;
   }
 
   nav a {
     height: auto;
     padding: 2% 5%;
+    margin-bottom: 10px;
   }
   
   .header-buttons button {

@@ -33,7 +33,7 @@ else if (isset($_POST['text'])) {
     $stmt = $pdo->prepare("DELETE FROM links WHERE id=?");
     $stmt->execute([$id]);
     # Add new
-    require('../../../parts/addlinkafteredit.php');
+    require('../../../parts/addlink.php');
   }
   # No image change
   else {

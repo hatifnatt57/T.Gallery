@@ -1,11 +1,15 @@
 .results {
-  gap: 30px;
   padding: 50px 10px;
 }
 
 .figure-container {
   height: unset;
   padding: 0;
+  margin-bottom: 30px;
+}
+
+.figure-container:last-child {
+  margin-bottom: 0;
 }
 
 .figure-container:hover {
