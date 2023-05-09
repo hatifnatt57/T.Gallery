@@ -195,7 +195,7 @@ nav {
   width: 300px;
   position: fixed;
   left: 0;
-  top: calc(0px - 2px - var(--navheight) * 5);
+  top: calc(0px - 2px - var(--navheight) * 4);
   transition: top 0.2s;
   border: dashed 2px var(--white);
   border-top: none;

@@ -28,18 +28,21 @@ if (!$orderint) {
 $data = [
   'format' => $format,
   'text' => $_POST['text'],
+  'text_en' => $_POST['text_en'],
   'orderint' => $orderint
 ];
 $query = "INSERT INTO links
 (
   format,
   text,
+  text_en,
   orderint
 )
 VALUES
 (
   :format,
   :text,
+  :text_en,
   :orderint
 )
 ";

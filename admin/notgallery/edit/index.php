@@ -38,8 +38,8 @@ else if (isset($_POST['text'])) {
   }
   # No image change
   else {
-    $query = "UPDATE links SET text=? WHERE id=?";
-    $pdo->prepare($query)->execute([$_POST['text'], $_POST['id']]);
+    $query = "UPDATE links SET text=?, text_en=? WHERE id=?";
+    $pdo->prepare($query)->execute([$_POST['text'], $_POST['text_en'], $_POST['id']]);
   }
 
   $_SESSION['success'] = 'Запись отредактирована!';
@@ -80,6 +80,8 @@ else {
     <input type="file" name="image" accept="image/jpeg, image/png" id="image" class="change-image-ui">
     <label for="text">Описание: <span class="req">*</span></label>
     <textarea name="text" id="text" rows="5"><?= htmlentities($entry['text']) ?></textarea>
+    <label for="text_en">Описание (en): <span class="req">*</span></label>
+    <textarea name="text_en" id="text_en" rows="5"><?= htmlentities($entry['text_en']) ?></textarea>
     <input type="hidden" name="id" value="<?= $entry['id'] ?>">
     <div class="buttons-low">
       <button type="submit">Принять</button>
@@ -96,13 +98,30 @@ else {
     <button type="button" class="close-overlay-btn">ОК</button>
   </div>
   <script>
-    const textarea = document.querySelector('#text');
-    textarea.addEventListener('input', function() {
-      if (this.value.length > 270) {
-        this.value = this.value.slice(0, 271);
+    document.querySelector('form').onsubmit = validateForm;
+
+    function validateForm() {
+      const form = document.forms['form'];
+      const required = {
+        text: 'Описание',
+        text_en: 'Описание (en)'
+      };
+      for (const field in required) {
+        if (form[field].value === '') {
+          alert(`Все поля обязательны для заполнения!`)
+          return false;
+        }
+      };
+      const fileInput = document.querySelector('#image');
+      if (fileInput.files[0]) {
+        if (fileInput.files[0].size > 10 * 1024 * 1024) {
+          alert('Размер файла изображения не должен превышать 10МБ!');
+          return false;
+        };
       }
-    });
+    }
   </script>
+  <script src="../../../assets/js/textareavalidation.js" defer></script>
   <script src="../../../assets/js/changeimageui.js" defer></script>
   <script src="../../../assets/js/legend.js" defer></script>
 </body>

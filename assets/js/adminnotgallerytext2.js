@@ -6,6 +6,7 @@ function getRowHTML(content, n) {
   `;
 }
 
+if (rows.length === 0) rows.push('');
 const form = document.querySelector('form');
 let rowsHTML = '';
 rows.forEach((row, i) => {

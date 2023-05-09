@@ -41,13 +41,13 @@ else {
   <link rel="stylesheet" href="../../../assets/css/add.css">
   <link rel="stylesheet" href="../../../assets/css/home_edit.css">
   <link rel="stylesheet" href="../../../assets/css/legend.css">
-  <title>Редактирование текста в НеГалерее | T.Gallery</title>
+  <title>Редактирование вступительного текста в НеГалерее | T.Gallery</title>
 </head>
 <body>
   <a href="../" class="back-link">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM231 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L376 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-182.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L119 273c-9.4-9.4-9.4-24.6 0-33.9L231 127z"/></svg>
   </a>
-  <h2>Редактирование текста в НеГалерее</h2>
+  <h2>Редактирование вступительного текста в НеГалерее</h2>
   <div class="container">
     <form action="./" method="post" enctype="multipart/form-data" spellcheck="false" name="form">
       <button type="button" class="create-new-row-btn">
@@ -72,7 +72,7 @@ else {
     // Data
     const rows = <?= $rows ?>;
   </script>
-  <script src="../../../assets/js/adminnotgallerytext.js" defer></script>
+  <script src="../../../assets/js/adminnotgallerytext2.js" defer></script>
   <script src="../../../assets/js/legend.js" defer></script>
 </body>
 </html>

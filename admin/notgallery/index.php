@@ -56,19 +56,21 @@ ELEM;
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/fonts.css">
-  <link rel="stylesheet" href="../../assets/css/admin5.css">
+  <link rel="stylesheet" href="../../assets/css/admin6.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
   <script src="../../assets/js/message.js" defer></script>
   <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .edit-text-link {
       font-family: 'PTRootUI', sans-serif;
       font-size: 20px;
       color: var(--white);
-      display: inline-block;
       font-weight: 500;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
       text-decoration: underline;
       margin: 30px 0;
     }
@@ -109,6 +111,7 @@ ELEM;
   </header>
   <h3>НеГалерея</h3>
   <a href="./edittext/" class="edit-text-link">Редактировать вступительный текст</a>
+  <a href="./edittext_en/" class="edit-text-link">Редактировать вступительный текст (en)</a>
   <?php
     if (count($allLinks) === 0) {
       echo '<h3>Записей нет</h3>';
