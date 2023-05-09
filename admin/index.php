@@ -86,7 +86,7 @@ ELEM;
   <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="../assets/css/root.css">
   <link rel="stylesheet" href="../assets/css/fonts.css">
-  <link rel="stylesheet" href="../assets/css/admin3.css">
+  <link rel="stylesheet" href="../assets/css/admin4.css">
   <link rel="stylesheet" href="../assets/css/message.css">
   <script src="../assets/js/message.js" defer></script>
   <title>Администрация | T.Gallery</title>
@@ -135,6 +135,9 @@ ELEM;
     </a>
     <a href="./notgallery/">
       <div class="nav--item">НеГалерея</div>
+    </a>
+    <a href="./home_en/">
+      <div class="nav--item">Главная страница (en)</div>
     </a>
   </nav>
   <?php
