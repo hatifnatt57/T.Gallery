@@ -22,7 +22,40 @@ if ($height > 1080) {
   $width = $height / $coef;
 }
 
-$search = join(' ', array_filter($_POST, function($val) { return $val !== ''; }));
+switch ($_POST['category']) {
+  case 'Графика':
+    $category_en = 'Graphics';
+    break;
+  
+  case 'Пастель':
+    $category_en = 'Pastel';
+    break;
+
+  case 'Акрил':
+    $category_en = 'Acrylic';
+    break;
+}
+
+$post_ru = array(
+  $_POST['title'],
+  $_POST['year'],
+  $_POST['category'],
+  $_POST['technique'],
+  $_POST['size'],
+  $_POST['description']
+);
+
+$post_en = array(
+  $_POST['title_en'],
+  $_POST['year'],
+  $category_en,
+  $_POST['technique_en'],
+  $_POST['size_en'],
+  $_POST['description_en']
+);
+
+$search_ru = join(' ', array_filter($post_ru, function($val) { return $val !== ''; }));
+$search_en = join(' ', array_filter($post_en, function($val) { return $val !== ''; }));
 
 $data = [
   'title' => $_POST['title'],
@@ -32,8 +65,13 @@ $data = [
   'description' => $_POST['description'],
   'format' => $format,
   'category' => $_POST['category'],
-  'search' => $search,
-  'orderint' => 0
+  'search' => $search_ru,
+  'orderint' => 0,
+  'title_en' => $_POST['title_en'],
+  'technique_en' => $_POST['technique_en'],
+  'size_en' => $_POST['size_en'],
+  'description_en' => $_POST['description_en'],
+  'search_en' => $search_en
 ];
 $query = "INSERT INTO pics
 (
@@ -45,7 +83,12 @@ $query = "INSERT INTO pics
   format,
   category,
   search,
-  orderint
+  orderint,
+  title_en,
+  technique_en,
+  size_en,
+  description_en,
+  search_en
 )
 VALUES
 (
@@ -57,7 +100,12 @@ VALUES
   :format,
   :category,
   :search,
-  :orderint
+  :orderint,
+  :title_en,
+  :technique_en,
+  :size_en,
+  :description_en,
+  :search_en
 )
 ";
 $pdo->prepare($query)->execute($data);

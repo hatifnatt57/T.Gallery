@@ -69,6 +69,14 @@ if (isset($_POST['title'])) {
     <input type="text" name="size" id="size">
     <label for="description">Комментарий:</label>
     <textarea name="description" id="description" rows="5"></textarea>
+    <label for="title_en">Название (en): <span class="req">*</span></label>
+    <input type="text" name="title_en" id="title_en">
+    <label for="technique_en">Материалы (en):</label>
+    <input type="text" name="technique_en" id="technique_en">
+    <label for="size_en">Размер (en):</label>
+    <input type="text" name="size_en" id="size_en">
+    <label for="description_en">Комментарий (en):</label>
+    <textarea name="description_en" id="description_en" rows="5"></textarea>
     <button type="submit">Добавить</button>
   </form>
   <script src="../../assets/js/yearvalidation.js" defer></script>
@@ -80,7 +88,8 @@ if (isset($_POST['title'])) {
       const required = {
         image: 'Файл изображения',
         title: 'Название',
-        year: 'Год создания'
+        year: 'Год создания',
+        title_en: 'Название (en)'
       };
       for (const field in required) {
         if (form[field].value === '') {

@@ -1,4 +1,8 @@
 <?php
+function notemptynorid($val, $key) {
+  return ($val !== '' && $key !== 'id');
+}
+
 $image_name = $_FILES['image']['name'];
 $image_tmp_name = $_FILES['image']['tmp_name'];
 $dest = "../../assets/tmp/$image_name";
@@ -22,8 +26,6 @@ if ($height > 1080) {
   $width = $height / $coef;
 }
 
-$search = join(' ', array_filter($_POST, function($val) { return $val !== ''; }));
-
 $data = [
   'title' => $_POST['title'],
   'size' => $_POST['size'],
@@ -34,7 +36,12 @@ $data = [
   'category' => $_POST['category'],
   'search' => $search,
   'orderint' => $entry['orderint'],
-  'home_orderint' => $entry['home_orderint']
+  'home_orderint' => $entry['home_orderint'],
+  'title_en' => $_POST['title_en'],
+  'technique_en' => $_POST['technique_en'],
+  'size_en' => $_POST['size_en'],
+  'description_en' => $_POST['description_en'],
+  'search_en' => $search_en
 ];
 $query = "INSERT INTO pics
 (
@@ -47,7 +54,12 @@ $query = "INSERT INTO pics
   category,
   search,
   orderint,
-  home_orderint
+  home_orderint,
+  title_en,
+  technique_en,
+  size_en,
+  description_en,
+  search_en
 )
 VALUES
 (
@@ -60,7 +72,12 @@ VALUES
   :category,
   :search,
   :orderint,
-  :home_orderint
+  :home_orderint,
+  :title_en,
+  :technique_en,
+  :size_en,
+  :description_en,
+  :search_en
 )
 ";
 $pdo->prepare($query)->execute($data);

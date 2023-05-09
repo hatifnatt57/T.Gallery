@@ -21,6 +21,46 @@ if (isset($_GET['id'])) {
 }
 # POST
 else if (isset($_POST['title'])) {
+  # Preparing variables
+  function notemptynorid($val, $key) {
+    return ($val !== '' && $key !== 'id');
+  }
+
+  switch ($_POST['category']) {
+    case 'Графика':
+      $category_en = 'Graphics';
+      break;
+    
+    case 'Пастель':
+      $category_en = 'Pastel';
+      break;
+  
+    case 'Акрил':
+      $category_en = 'Acrylic';
+      break;
+  }
+  
+  $post_ru = array(
+    $_POST['title'],
+    $_POST['year'],
+    $_POST['category'],
+    $_POST['technique'],
+    $_POST['size'],
+    $_POST['description']
+  );
+  
+  $post_en = array(
+    $_POST['title_en'],
+    $_POST['year'],
+    $category_en,
+    $_POST['technique_en'],
+    $_POST['size_en'],
+    $_POST['description_en']
+  );
+  
+  $search_ru = join(' ', array_filter($post_ru, 'notemptynorid', ARRAY_FILTER_USE_BOTH));
+  $search_en = join(' ', array_filter($post_en, 'notemptynorid', ARRAY_FILTER_USE_BOTH));
+
   # Image change
   if ($_FILES['image']['name'] !== '') {
     # Delete old
@@ -38,12 +78,6 @@ else if (isset($_POST['title'])) {
   }
   # No image change
   else {
-    function notemptynorid($val, $key) {
-      return ($val !== '' && $key !== 'id');
-    }
-  
-    $search = join(' ', array_filter($_POST, 'notemptynorid', ARRAY_FILTER_USE_BOTH));
-  
     $data = [
       'title' => $_POST['title'],
       'size' => $_POST['size'],
@@ -51,8 +85,13 @@ else if (isset($_POST['title'])) {
       'year' => $_POST['year'],
       'description' => $_POST['description'],
       'category' => $_POST['category'],
-      'search' => $search,
-      'id' => $_POST['id']
+      'search' => $search_ru,
+      'id' => $_POST['id'],
+      'title_en' => $_POST['title_en'],
+      'technique_en' => $_POST['technique_en'],
+      'size_en' => $_POST['size_en'],
+      'description_en' => $_POST['description_en'],
+      'search_en' => $search_en
     ];
     $query = "UPDATE pics SET 
       title=:title,
@@ -61,7 +100,12 @@ else if (isset($_POST['title'])) {
       year=:year,
       description=:description,
       category=:category,
-      search=:search
+      search=:search,
+      title_en=:title_en,
+      technique_en=:technique_en,
+      size_en=:size_en,
+      description_en=:description_en,
+      search_en=:search_en
       WHERE id=:id";
     $pdo->prepare($query)->execute($data);
   }
@@ -133,6 +177,14 @@ else {
       <input type="text" name="size" id="size" value="<?= htmlentities($entry['size']) ?>">
       <label for="description">Комментарий:</label>
       <textarea name="description" id="description" rows="5"><?= htmlentities($entry['description']) ?></textarea>
+      <label for="title_en">Название (en): <span class="req">*</span></label>
+      <input type="text" name="title_en" id="title_en" value="<?= htmlentities($entry['title_en']) ?>">
+      <label for="technique_en">Материалы (en):</label>
+      <input type="text" name="technique_en" id="technique_en" value="<?= htmlentities($entry['technique_en']) ?>">
+      <label for="size_en">Размер (en):</label>
+      <input type="text" name="size_en" id="size_en" value="<?= htmlentities($entry['size_en']) ?>">
+      <label for="description_en">Комментарий (en):</label>
+      <textarea name="description_en" id="description_en" rows="5"><?= htmlentities($entry['description_en']) ?></textarea>
       <input type="hidden" name="id" value="<?= $entry['id'] ?>">
       <button type="submit">Принять</button>
     </form>
@@ -145,7 +197,8 @@ else {
       const form = document.forms['form'];
       const required = {
         title: 'Название',
-        year: 'Год создания'
+        year: 'Год создания',
+        title_en: 'Название (en)'
       };
       for (const field in required) {
         if (form[field].value === '') {
