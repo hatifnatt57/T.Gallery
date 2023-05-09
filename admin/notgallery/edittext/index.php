@@ -5,6 +5,7 @@ session_start();
 # Login
 if ($_SESSION['logged_in'] !== 'true') {
   header('Location: ../../login/');
+  exit();
 }
 
 # GET

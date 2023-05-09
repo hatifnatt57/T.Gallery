@@ -5,6 +5,7 @@ session_start();
 # Login
 if ($_SESSION['logged_in'] !== 'true') {
   header('Location: ../../admin/login/');
+  exit();
 }
 
 if (isset($_POST['order'])) {

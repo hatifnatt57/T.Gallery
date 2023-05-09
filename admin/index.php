@@ -4,6 +4,7 @@ session_start();
 
 if ($_SESSION['logged_in'] !== 'true') {
   header('Location: ../admin/login/');
+  exit();
 }
 
 $stmt = $pdo->query('SELECT * FROM pics ORDER BY orderint');

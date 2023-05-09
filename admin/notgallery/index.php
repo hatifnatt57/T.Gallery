@@ -4,6 +4,7 @@ session_start();
 
 if ($_SESSION['logged_in'] !== 'true') {
   header('Location: ../login/');
+  exit();
 }
 
 $stmt = $pdo->query('SELECT * FROM links ORDER BY orderint');
