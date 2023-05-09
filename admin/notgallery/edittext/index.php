@@ -73,6 +73,6 @@ else {
     const rows = <?= $rows ?>;
   </script>
   <script src="../../../assets/js/adminnotgallerytext.js" defer></script>
-  <script src="../../../assets/js/adminabout.js" defer></script>
+  <script src="../../../assets/js/legend.js" defer></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ if ($_SESSION['logged_in'] !== 'true') {
 
 # GET
 if (!isset($_POST['text'])) {
-  $stmt = $pdo->query('SELECT * FROM keyval WHERE keyfield="text"');
+  $stmt = $pdo->query('SELECT * FROM keyval WHERE keyfield="text_en"');
   $textarr = $stmt->fetch(PDO::FETCH_ASSOC);
   if (count($textarr) > 0) {
     $textval = htmlentities($textarr['val']);
@@ -22,30 +22,8 @@ if (!isset($_POST['text'])) {
 
 # POST
 if (isset($_POST['text'])) {
-  $query = "UPDATE keyval SET val=? WHERE keyfield='text'";
+  $query = "UPDATE keyval SET val=? WHERE keyfield='text_en'";
   $pdo->prepare($query)->execute([$_POST['text']]);
-  # Image add/change
-  if ($_FILES['image']['name'] !== '') {
-    clearstatcache();
-    if (file_exists('../../assets/imgs/about.jpg')) {
-      unlink('../../assets/imgs/about.jpg');
-    }
-    if (file_exists('../../assets/imgs/about.png')) {
-      unlink('../../assets/imgs/about.png');
-    }
-
-    $image_name = $_FILES['image']['name'];
-    $image_tmp_name = $_FILES['image']['tmp_name'];
-    $format;
-    if (strpos($image_name, '.jpg') !== false
-    || strpos($image_name, '.jpeg') !== false) $format = 'jpg';
-    else $format = 'png';
-    $dest = "../../assets/imgs/about.$format";
-    move_uploaded_file($image_tmp_name, $dest);
-
-    $query = "UPDATE keyval SET val=? WHERE keyfield='format'";
-    $pdo->prepare($query)->execute([$format]);
-  }
 
   $_SESSION['success'] = 'Раздел отредактирован!';
   header('Location: ../../admin/');
@@ -66,18 +44,15 @@ if (isset($_POST['text'])) {
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/about_edit.css">
   <link rel="stylesheet" href="../../assets/css/legend.css">
-  <title>Редактирование раздела &laquo;Обо мне&raquo; | T.Gallery</title>
+  <title>Редактирование английской версии раздела &laquo;Обо мне&raquo; | T.Gallery</title>
 </head>
 <body>
   <a href="../../admin/" class="back-link">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM231 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L376 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-182.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L119 273c-9.4-9.4-9.4-24.6 0-33.9L231 127z"/></svg>
   </a>
-  <h2>Редактирование раздела &laquo;Обо мне&raquo;</h2>
+  <h2>Редактирование английской версии раздела &laquo;Обо мне&raquo;</h2>
   <div class="container">
     <form action="./" method="post" enctype="multipart/form-data" spellcheck="false">
-      <button type="button" class="change-image-btn">Заменить изображение</button>
-      <label for="image" class="image-input">Файл изображения:</label>
-      <input type="file" name="image" id="image" accept="image/jpeg, image/png" class="image-input">
       <label for="text">Текст:</label>
       <textarea name="text" id="text"><?= $textval ?></textarea>
       <div class="buttons-low">
@@ -95,7 +70,6 @@ if (isset($_POST['text'])) {
     <p>Параграфы отделять двумя энтерами</p>
     <button type="button" class="close-overlay-btn">ОК</button>
   </div>
-  <script src="../../assets/js/changeimageui.js" defer></script>
   <script src="../../assets/js/legend.js" defer></script>
 </body>
 </html>

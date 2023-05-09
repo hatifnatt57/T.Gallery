@@ -104,6 +104,6 @@ else {
     });
   </script>
   <script src="../../../assets/js/changeimageui.js" defer></script>
-  <script src="../../../assets/js/adminabout.js" defer></script>
+  <script src="../../../assets/js/legend.js" defer></script>
 </body>
 </html>
