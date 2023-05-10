@@ -2,10 +2,10 @@ async function loadImgs() {
   for (let i = 0; i < data.length; i++) {
     const entry = data[i];
     const meta = [
-      entry['title'],
+      entry['title_en'],
       entry['year'],
-      entry['technique'],
-      entry['size'],
+      entry['technique_en'],
+      entry['size_en'],
     ];
     const img = await loadImg(`../../assets/icons/${entry['id']}.${entry['format']}`);
     const figureContainer = document.createElement('li');
