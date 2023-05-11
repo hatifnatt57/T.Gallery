@@ -57,7 +57,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <main>
     <h1>Virtual gallery of Oleg Traktuev</h1>
     <div class="greeting"></div>
-    <h2>Recent</h2>
+    <h2>From recent works</h2>
     <div class="imgs-container"></div>
   </main>
   <?php require('../parts/footer.php') ?>

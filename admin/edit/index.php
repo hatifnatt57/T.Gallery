@@ -135,6 +135,7 @@ else {
   <link rel="stylesheet" href="../../assets/css/add.css">
   <link rel="stylesheet" href="../../assets/css/edit.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
+  <link rel="stylesheet" href="../../assets/css/frasl.css">
   <script src="../../assets/js/loadimg.js"></script>
   <script src="../../assets/js/changeimageui.js" defer></script>
   <script src="../../assets/js/message.js" defer></script>
@@ -182,7 +183,10 @@ else {
       <label for="technique_en">Материалы (en):</label>
       <input type="text" name="technique_en" id="technique_en" value="<?= htmlentities($entry['technique_en']) ?>">
       <label for="size_en">Размер (en):</label>
-      <input type="text" name="size_en" id="size_en" value="<?= htmlentities($entry['size_en']) ?>">
+      <div class="size-input-container">
+        <input type="text" name="size_en" id="size_en" value="<?= htmlentities($entry['size_en']) ?>">
+        <button type="button" class="frasl-btn"><span>/</span></button>
+      </div>
       <label for="description_en">Комментарий (en):</label>
       <textarea name="description_en" id="description_en" rows="5"><?= htmlentities($entry['description_en']) ?></textarea>
       <input type="hidden" name="id" value="<?= $entry['id'] ?>">
@@ -190,6 +194,7 @@ else {
     </form>
   </div>
   <script src="../../assets/js/yearvalidation.js" defer></script>
+  <script src="../../assets/js/frasl.js" defer></script>
   <script>
     // Form validation
     document.querySelector('form').onsubmit = validateForm;

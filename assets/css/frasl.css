@@ -1,0 +1,17 @@
+.size-input-container {
+  height: 33px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.size-input-container input {
+  height: 100%;
+}
+
+.frasl-btn {
+  width: 33px;
+  height: 100%;
+  margin-left: 10px;
+  line-height: 100%;
+  background-color: var(--sand);
+}

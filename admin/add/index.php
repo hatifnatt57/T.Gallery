@@ -31,6 +31,7 @@ if (isset($_POST['title'])) {
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/add.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
+  <link rel="stylesheet" href="../../assets/css/frasl.css">
   <title>Добавление записи | T.Gallery</title>
   <script src="../../assets/js/message.js" defer></script>
 </head>
@@ -74,12 +75,16 @@ if (isset($_POST['title'])) {
     <label for="technique_en">Материалы (en):</label>
     <input type="text" name="technique_en" id="technique_en">
     <label for="size_en">Размер (en):</label>
-    <input type="text" name="size_en" id="size_en">
+    <div class="size-input-container">
+        <input type="text" name="size_en" id="size_en">
+        <button type="button" class="frasl-btn">/</button>
+      </div>
     <label for="description_en">Комментарий (en):</label>
     <textarea name="description_en" id="description_en" rows="5"></textarea>
     <button type="submit">Добавить</button>
   </form>
   <script src="../../assets/js/yearvalidation.js" defer></script>
+  <script src="../../assets/js/frasl.js" defer></script>
   <script>
     document.querySelector('form').onsubmit = validateForm;
 
