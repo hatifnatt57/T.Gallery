@@ -70,7 +70,7 @@ if (isset($_POST['title'])) {
     <input type="text" name="size" id="size">
     <label for="description">Комментарий:</label>
     <textarea name="description" id="description" rows="5"></textarea>
-    <label for="title_en">Название (en): <span class="req">*</span></label>
+    <label for="title_en">Название (en):</label>
     <input type="text" name="title_en" id="title_en">
     <label for="technique_en">Материалы (en):</label>
     <input type="text" name="technique_en" id="technique_en">
@@ -93,8 +93,7 @@ if (isset($_POST['title'])) {
       const required = {
         image: 'Файл изображения',
         title: 'Название',
-        year: 'Год создания',
-        title_en: 'Название (en)'
+        year: 'Год создания'
       };
       for (const field in required) {
         if (form[field].value === '') {

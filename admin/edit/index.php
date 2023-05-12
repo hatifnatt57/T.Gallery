@@ -178,7 +178,7 @@ else {
       <input type="text" name="size" id="size" value="<?= htmlentities($entry['size']) ?>">
       <label for="description">Комментарий:</label>
       <textarea name="description" id="description" rows="5"><?= htmlentities($entry['description']) ?></textarea>
-      <label for="title_en">Название (en): <span class="req">*</span></label>
+      <label for="title_en">Название (en):</label>
       <input type="text" name="title_en" id="title_en" value="<?= htmlentities($entry['title_en']) ?>">
       <label for="technique_en">Материалы (en):</label>
       <input type="text" name="technique_en" id="technique_en" value="<?= htmlentities($entry['technique_en']) ?>">
@@ -202,8 +202,7 @@ else {
       const form = document.forms['form'];
       const required = {
         title: 'Название',
-        year: 'Год создания',
-        title_en: 'Название (en)'
+        year: 'Год создания'
       };
       for (const field in required) {
         if (form[field].value === '') {

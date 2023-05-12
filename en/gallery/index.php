@@ -55,7 +55,7 @@ if (isset($_GET['cat'])) {
       $cat = 'Акрил';
       break;
   }
-  $stmt = $pdo->prepare("SELECT * FROM pics WHERE category=? ORDER BY orderint");
+  $stmt = $pdo->prepare("SELECT * FROM pics WHERE category=? AND title_en IS NOT NULL AND title_en != '' ORDER BY orderint");
   $stmt->execute([$cat]);
   $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -72,7 +72,8 @@ if (isset($_GET['q'])) {
     for ($i=1; $i < count($q_words); $i++) { 
       $sql .= "AND search_en LIKE ?";
     };
-    $sql .= ") ORDER BY category, orderint";
+    $sql .= ") AND title_en IS NOT NULL AND title_en != ''";
+    $sql .= " ORDER BY category, orderint";
     $stmt = $pdo->prepare($sql);
     $stmt->execute($exec_data);
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
