@@ -135,7 +135,7 @@ else {
   <link rel="stylesheet" href="../../assets/css/add.css">
   <link rel="stylesheet" href="../../assets/css/edit.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
-  <link rel="stylesheet" href="../../assets/css/frasl.css">
+  <link rel="stylesheet" href="../../assets/css/frasl2.css">
   <script src="../../assets/js/loadimg.js"></script>
   <script src="../../assets/js/changeimageui.js" defer></script>
   <script src="../../assets/js/message.js" defer></script>

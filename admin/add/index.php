@@ -31,7 +31,7 @@ if (isset($_POST['title'])) {
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/add.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
-  <link rel="stylesheet" href="../../assets/css/frasl.css">
+  <link rel="stylesheet" href="../../assets/css/frasl2.css">
   <title>Добавление записи | T.Gallery</title>
   <script src="../../assets/js/message.js" defer></script>
 </head>
