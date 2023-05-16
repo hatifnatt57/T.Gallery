@@ -229,7 +229,7 @@ $data_rem = array_slice($data, $load_at_start);
   </div>
   <script src="../../assets/js/zoom.js"></script>
   <!-- Async data rendering -->
-  <script src="../../assets/js/loadimgslisten.js" defer></script>
+  <script src="../../assets/js/loadimgslisten2.js" defer></script>
   <?php else: ?>
     <script src="../../assets/js/loadimgsgalleryen.js" defer></script>
   <?php endif ?>

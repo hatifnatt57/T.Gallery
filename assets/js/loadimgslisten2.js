@@ -20,7 +20,7 @@ async function loadImgs() {
     if (entry['description'] !== '') {
       const p2 = document.createElement('p');
       p2.classList.add('description');
-      p2.innerHTML = entry['description'];
+      p2.innerHTML = entry['description_en'];
       caption.appendChild(p2);
     }
     figure.appendChild(caption);
