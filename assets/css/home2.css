@@ -19,6 +19,11 @@ main h1 {
   text-align: center;
 }
 
+.greeting a {
+  color: var(--sand);
+  text-decoration: underline;
+}
+
 main h2 {
   text-align: center;
   margin: 50px auto 30px;

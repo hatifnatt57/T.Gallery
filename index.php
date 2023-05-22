@@ -22,10 +22,11 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="./assets/css/default.css">
   <link rel="stylesheet" href="./assets/css/root.css">
   <link rel="stylesheet" href="./assets/css/header3.css">
-  <link rel="stylesheet" href="./assets/css/home.css">
+  <link rel="stylesheet" href="./assets/css/home2.css">
   <script src="./assets/js/header.js" defer></script>
   <script src="./assets/js/loadimg.js"></script>
   <script src="./libs/typograf.min.js"></script>
+  <script src="./libs/marked.min.js"></script>
   <script>
     const data = <?= json_encode($data) ?>;
     const rows = <?= $rows ?>;
@@ -85,6 +86,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
 
     const greeting = document.querySelector('.greeting');
     greeting.innerHTML = rows
+    .map(row => marked.parse(row).replace(/<a/g, '<a target="_blank"'))
     .map(row => tp.execute(row).replace(/&mdash;/g, '<span class="mdash">&mdash;</span>'))
     .map(row => '<p>' + row + '</p>').join('\n');
   </script>
