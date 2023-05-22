@@ -22,7 +22,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="../assets/css/root.css">
   <link rel="stylesheet" href="../assets/css/header3.css">
-  <link rel="stylesheet" href="../assets/css/headeren.css">
+  <link rel="stylesheet" href="../assets/css/headeren2.css">
   <link rel="stylesheet" href="../assets/css/home.css">
   <script src="../assets/js/header.js" defer></script>
   <script src="../assets/js/loadimg.js"></script>

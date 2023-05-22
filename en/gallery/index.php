@@ -111,7 +111,7 @@ $data_rem = array_slice($data, $load_at_start);
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/header3.css">
-  <link rel="stylesheet" href="../../assets/css/headeren.css">
+  <link rel="stylesheet" href="../../assets/css/headeren2.css">
   <link rel="stylesheet" href="../../assets/css/<?= $view ?>2.css">
   <link rel="stylesheet" href="../../assets/css/tooltip.css">
   <script src="../../assets/js/header.js" defer></script>

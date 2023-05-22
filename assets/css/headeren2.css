@@ -11,3 +11,9 @@ nav {
     display: none;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 100vw;
+  }
+}
