@@ -111,6 +111,7 @@ $data_rem = array_slice($data, $load_at_start);
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/header3.css">
+  <link rel="stylesheet" href="../../assets/css/headeren.css">
   <link rel="stylesheet" href="../../assets/css/<?= $view ?>2.css">
   <link rel="stylesheet" href="../../assets/css/tooltip.css">
   <script src="../../assets/js/header.js" defer></script>
@@ -140,7 +141,7 @@ $data_rem = array_slice($data, $load_at_start);
       <a href="../gallery/?cat=graphics" <?= $cat === 'Графика' ? 'active' : '' ?>>Graphics</a>
       <a href="../gallery/?cat=pastel" <?= $cat === 'Пастель' ? 'active' : '' ?>>Pastel</a>
       <a href="../gallery/?cat=acrylic" <?= $cat === 'Акрил' ? 'active' : '' ?>>Acrylic</a>
-      <a href="../notgallery/">NonGallery</a>
+      <a href="../notgallery/">BeyondTheGallery</a>
     </nav>
     <div class="header-buttons">
       <form action="../gallery/" method="post" class="change-view-form">

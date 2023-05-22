@@ -18,6 +18,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/header3.css">
+  <link rel="stylesheet" href="../../assets/css/headeren.css">
   <link rel="stylesheet" href="../../assets/css/about.css">
   <script src="../../assets/js/header.js" defer></script>
   <script src="../../assets/js/loadimg.js"></script>
@@ -44,7 +45,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <a href="../gallery/?cat=graphics">Graphics</a>
       <a href="../gallery/?cat=pastel">Pastel</a>
       <a href="../gallery/?cat=acrylic">Acrylic</a>
-      <a href="../notgallery/">NonGallery</a>
+      <a href="../notgallery/">BeyondTheGallery</a>
     </nav>
   </header>
   <main></main>

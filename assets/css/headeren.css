@@ -1,0 +1,13 @@
+nav {
+  width: 640px;
+}
+
+@media screen and (max-width: 1180px) {
+  .logo--short {
+    display: inline;
+  }
+
+  .logo--long {
+    display: none;
+  }
+}

@@ -14,13 +14,14 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#393e46">
-  <title>NonGallery | T.Gallery</title>
+  <title>BeyondTheGallery | T.Gallery</title>
   <link rel="icon" type="image/jpeg" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/header3.css">
+  <link rel="stylesheet" href="../../assets/css/headeren.css">
   <link rel="stylesheet" href="../../assets/css/list2.css">
   <link rel="stylesheet" href="../../assets/css/links_list3.css">
   <script src="../../assets/js/header.js" defer></script>
@@ -52,7 +53,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
       <a href="../gallery/?cat=graphics">Graphics</a>
       <a href="../gallery/?cat=pastel">Pastel</a>
       <a href="../gallery/?cat=acrylic">Acrylic</a>
-      <a href="./" active>NonGallery</a>
+      <a href="./" active>BeyondTheGallery</a>
     </nav>
   </header>
   <main>
