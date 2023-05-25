@@ -110,8 +110,8 @@ $data_rem = array_slice($data, $load_at_start);
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
-  <link rel="stylesheet" href="../../assets/css/header5.css">
-  <link rel="stylesheet" href="../../assets/css/headeren2.css">
+  <link rel="stylesheet" href="../../assets/css/header6.css">
+  <link rel="stylesheet" href="../../assets/css/headeren3.css">
   <link rel="stylesheet" href="../../assets/css/<?= $view ?>2.css">
   <link rel="stylesheet" href="../../assets/css/tooltip.css">
   <script src="../../assets/js/header.js" defer></script>

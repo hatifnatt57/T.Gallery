@@ -20,8 +20,8 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
-  <link rel="stylesheet" href="../../assets/css/header5.css">
-  <link rel="stylesheet" href="../../assets/css/headeren2.css">
+  <link rel="stylesheet" href="../../assets/css/header6.css">
+  <link rel="stylesheet" href="../../assets/css/headeren3.css">
   <link rel="stylesheet" href="../../assets/css/list2.css">
   <link rel="stylesheet" href="../../assets/css/links_list3.css">
   <script src="../../assets/js/header.js" defer></script>

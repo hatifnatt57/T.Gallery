@@ -16,4 +16,12 @@ nav {
   nav {
     width: 100vw;
   }
+
+  .logo--short {
+    display: none;
+  }
+
+  .logo--long {
+    display: inline;
+  }
 }
