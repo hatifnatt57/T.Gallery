@@ -17,7 +17,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
-  <link rel="stylesheet" href="../../assets/css/header3.css">
+  <link rel="stylesheet" href="../../assets/css/header5.css">
   <link rel="stylesheet" href="../../assets/css/headeren2.css">
   <link rel="stylesheet" href="../../assets/css/about.css">
   <script src="../../assets/js/header.js" defer></script>
@@ -49,7 +49,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </nav>
   </header>
   <main></main>
-  <?php require('../../parts/footer.php') ?>
+  <?php require('../../parts/footeren.php') ?>
   <script>
     async function loadAbout() {
       const data = <?= json_encode($data) ?>;

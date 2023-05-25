@@ -1,3 +1,6 @@
 <?php
-echo('<footer>&copy; All rights reserved. T.Gallery. 2023</footer>');
+echo('<footer>');
+echo('<p>&copy; All rights reserved. T.Gallery. 2023</p>');
+echo('<p>Адрес для комментариев: <a href="mailto:tgallery2023@gmail.com">tgallery2023@gmail.com</a></p>');
+echo('</footer>');
 ?>

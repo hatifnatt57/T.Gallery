@@ -220,9 +220,10 @@ nav {
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 80px;
   color: var(--white);
   font-family: 'PTRootUI', sans-serif;
   position: absolute;
@@ -236,8 +237,12 @@ footer {
   max-width: var(--maxwidth);
 }
 
+footer p:first-of-type {
+  margin-bottom: 4px;
+}
+
 body {
-  padding-bottom: 100px;
+  padding-bottom: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;

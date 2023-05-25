@@ -20,7 +20,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
-  <link rel="stylesheet" href="../../assets/css/header3.css">
+  <link rel="stylesheet" href="../../assets/css/header5.css">
   <link rel="stylesheet" href="../../assets/css/headeren2.css">
   <link rel="stylesheet" href="../../assets/css/list2.css">
   <link rel="stylesheet" href="../../assets/css/links_list3.css">
@@ -60,7 +60,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <div class="greeting"></div>
   <ul class="results"></ul>
   </main>
-  <?php require('../../parts/footer.php') ?>
+  <?php require('../../parts/footeren.php') ?>
   <!-- Zoom -->
   <div class="zoom-overlay">
     <button class="close-zoom-btn">

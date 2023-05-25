@@ -110,7 +110,7 @@ $data_rem = array_slice($data, $load_at_start);
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
-  <link rel="stylesheet" href="../../assets/css/header3.css">
+  <link rel="stylesheet" href="../../assets/css/header5.css">
   <link rel="stylesheet" href="../../assets/css/headeren2.css">
   <link rel="stylesheet" href="../../assets/css/<?= $view ?>2.css">
   <link rel="stylesheet" href="../../assets/css/tooltip.css">
@@ -234,7 +234,7 @@ $data_rem = array_slice($data, $load_at_start);
   <?php else: ?>
     <script src="../../assets/js/loadimgsgalleryen.js" defer></script>
   <?php endif ?>
-  <?php require('../../parts/footer.php') ?>
+  <?php require('../../parts/footeren.php') ?>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="../../assets/js/tooltip.js" defer></script>
   <script>

@@ -21,7 +21,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/default.css">
   <link rel="stylesheet" href="../assets/css/root.css">
-  <link rel="stylesheet" href="../assets/css/header3.css">
+  <link rel="stylesheet" href="../assets/css/header5.css">
   <link rel="stylesheet" href="../assets/css/headeren2.css">
   <link rel="stylesheet" href="../assets/css/home2.css">
   <script src="../assets/js/header.js" defer></script>
@@ -62,7 +62,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
     <h2>Latest works</h2>
     <div class="imgs-container"></div>
   </main>
-  <?php require('../parts/footer.php') ?>
+  <?php require('../parts/footeren.php') ?>
   <script>
     async function loadImgs() {
       const imgsContainer = document.querySelector('.imgs-container');
