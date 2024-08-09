@@ -84,7 +84,7 @@ if (isset($_POST['text'])) {
       };
     }
   </script>
-  <script src="../../../assets/js/textareavalidation.js" defer></script>
+  <script src="../../../assets/js/textareavalidation3.js" defer></script>
   <script src="../../../assets/js/legend.js" defer></script>
 </body>
 </html>
