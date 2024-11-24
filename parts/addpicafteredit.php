@@ -1,15 +1,11 @@
 <?php
-function notemptynorid($val, $key) {
-  return ($val !== '' && $key !== 'id');
-}
-
 $image_name = $_FILES['image']['name'];
 $image_tmp_name = $_FILES['image']['tmp_name'];
 $dest = "../../assets/tmp/$image_name";
 move_uploaded_file($image_tmp_name, $dest);
 $format;
-if (strpos($image_name, '.jpg') !== false
-|| strpos($image_name, '.jpeg') !== false) $format = 'jpg';
+if (strpos(strtolower($image_name), '.jpg') !== false
+|| strpos(strtolower($image_name), '.jpeg') !== false) $format = 'jpg';
 else $format = 'png';
 $size = getimagesize($dest);
 $widthor = $size[0];
@@ -34,7 +30,7 @@ $data = [
   'description' => $_POST['description'],
   'format' => $format,
   'category' => $_POST['category'],
-  'search' => $search,
+  'search' => $search_ru,
   'orderint' => $entry['orderint'],
   'home_orderint' => $entry['home_orderint'],
   'title_en' => $_POST['title_en'],

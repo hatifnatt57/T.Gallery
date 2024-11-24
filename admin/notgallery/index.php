@@ -10,10 +10,6 @@ if ($_SESSION['logged_in'] !== 'true') {
 $stmt = $pdo->query('SELECT * FROM links ORDER BY orderint');
 $allLinks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-function notempty($var) {
-  return $var !== '';
-}
-
 function generateElement($link) {
 return <<<ELEM
   <li data-id="{$link['id']}">

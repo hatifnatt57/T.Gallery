@@ -100,7 +100,7 @@ else if (isset($_POST['title'])) {
       year=:year,
       description=:description,
       category=:category,
-      search=:search,
+      search=:search_ru,
       title_en=:title_en,
       technique_en=:technique_en,
       size_en=:size_en,

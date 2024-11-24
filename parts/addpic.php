@@ -4,8 +4,8 @@ $image_tmp_name = $_FILES['image']['tmp_name'];
 $dest = "../../assets/tmp/$image_name";
 move_uploaded_file($image_tmp_name, $dest);
 $format;
-if (strpos($image_name, '.jpg') !== false
-|| strpos($image_name, '.jpeg') !== false) $format = 'jpg';
+if (strpos(strtolower($image_name), '.jpg') !== false
+|| strpos(strtolower($image_name), '.jpeg') !== false) $format = 'jpg';
 else $format = 'png';
 $size = getimagesize($dest);
 $widthor = $size[0];
