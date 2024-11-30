@@ -21,7 +21,7 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="stylesheet" href="./assets/css/fonts.css">
   <link rel="stylesheet" href="./assets/css/default.css">
   <link rel="stylesheet" href="./assets/css/root.css">
-  <link rel="stylesheet" href="./assets/css/header6.css">
+  <link rel="stylesheet" href="./assets/css/header7.css">
   <link rel="stylesheet" href="./assets/css/home2.css">
   <script src="./assets/js/header.js" defer></script>
   <script src="./assets/js/loadimg.js"></script>
@@ -53,11 +53,27 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
       <a href="./gallery/?cat=pastel">Пастель</a>
       <a href="./gallery/?cat=akril">Акрил</a>
       <a href="./notgallery/">НеГалерея</a>
+      <!-- <a href="./letters/">НамПишут</a> -->
     </nav>
     <div class="header-buttons">
       <a href="./en/" class="en-link">EN</a>
+      <button type="button" class="search-btn" title="Поиск">
+        <svg class="zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
     </div>
   </header>
+  <!-- Search overlay -->
+  <div class="search-overlay">
+    <button type="button" class="close-search-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+    </button>
+    <form action="./gallery/" method="get">
+      <input type="text" name="q" spellcheck="false">
+      <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+      </button>
+    </form>
+  </div>
   <main>
     <h1>Виртуальная галерея Олега Трактуева</h1>
     <div class="greeting"></div>

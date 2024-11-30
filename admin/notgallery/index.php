@@ -52,7 +52,7 @@ ELEM;
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/root.css">
   <link rel="stylesheet" href="../../assets/css/fonts.css">
-  <link rel="stylesheet" href="../../assets/css/admin6.css">
+  <link rel="stylesheet" href="../../assets/css/admin7.css">
   <link rel="stylesheet" href="../../assets/css/message.css">
   <script src="../../assets/js/message.js" defer></script>
   <style>
