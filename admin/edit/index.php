@@ -85,7 +85,7 @@ else if (isset($_POST['title'])) {
       'year' => $_POST['year'],
       'description' => $_POST['description'],
       'category' => $_POST['category'],
-      'search' => $search_ru,
+      'search_ru' => $search_ru,
       'id' => $_POST['id'],
       'title_en' => $_POST['title_en'],
       'technique_en' => $_POST['technique_en'],
