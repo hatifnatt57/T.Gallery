@@ -32,7 +32,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
   <meta name="theme-color" content="#393e46">
   <link rel="icon" type="image/jpeg" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
-  <link rel="stylesheet" href="../../assets/css/root.css">
+  <link rel="stylesheet" href="../../assets/css/root2.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/login.css">

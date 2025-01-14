@@ -27,7 +27,7 @@ if (isset($_POST['text'])) {
   <link rel="icon" type="image/jpeg" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../../../assets/css/default.css">
-  <link rel="stylesheet" href="../../../assets/css/root.css">
+  <link rel="stylesheet" href="../../../assets/css/root2.css">
   <link rel="stylesheet" href="../../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../../assets/css/add.css">
   <link rel="stylesheet" href="../../../assets/css/edit.css">
@@ -84,7 +84,7 @@ if (isset($_POST['text'])) {
       };
     }
   </script>
-  <script src="../../../assets/js/textareavalidation3.js" defer></script>
+  <script src="../../../assets/js/textareavalidation4.js" defer></script>
   <script src="../../../assets/js/legend.js" defer></script>
 </body>
 </html>

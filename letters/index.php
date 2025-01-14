@@ -19,8 +19,8 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/default.css">
-  <link rel="stylesheet" href="../assets/css/root.css">
-  <link rel="stylesheet" href="../assets/css/header7.css">
+  <link rel="stylesheet" href="../assets/css/root2.css">
+  <link rel="stylesheet" href="../assets/css/header8.css">
   <link rel="stylesheet" href="../assets/css/list2.css">
   <link rel="stylesheet" href="../assets/css/links_list3.css">
   <style>
@@ -39,6 +39,11 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
       font-size: 20px;
       margin: 40px 0 30px;
       letter-spacing: 12px;
+    }
+
+    main a {
+      color: var(--sand);
+      text-decoration: underline;
     }
   </style>
   <script src="../assets/js/header.js" defer></script>
@@ -70,7 +75,8 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
       <a href="../gallery/?cat=grafika">Графика</a>
       <a href="../gallery/?cat=pastel">Пастель</a>
       <a href="../gallery/?cat=akril">Акрил</a>
-      <a href="./" active>НеГалерея</a>
+      <a href="../notgallery/">НеГалерея</a>
+      <a href="./" active>НамПишут</a>
     </nav>
   </header>
   <main>

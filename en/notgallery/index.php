@@ -19,9 +19,8 @@ $rows = $stmt->fetch(PDO::FETCH_ASSOC)['val'];
   <link rel="icon" type="image/jpeg" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="../../assets/css/fonts.css">
   <link rel="stylesheet" href="../../assets/css/default.css">
-  <link rel="stylesheet" href="../../assets/css/root.css">
-  <link rel="stylesheet" href="../../assets/css/header7.css">
-  <link rel="stylesheet" href="../../assets/css/headeren3.css">
+  <link rel="stylesheet" href="../../assets/css/root2.css">
+  <link rel="stylesheet" href="../../assets/css/header8.css">
   <link rel="stylesheet" href="../../assets/css/list2.css">
   <link rel="stylesheet" href="../../assets/css/links_list3.css">
   <script src="../../assets/js/header.js" defer></script>

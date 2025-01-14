@@ -25,9 +25,10 @@ async function loadImgs() {
       caption.appendChild(p4);
     }
     if (entry['description_en'] !== '') {
-      const p5 = document.createElement('p');
+      const p5 = document.createElement('div');
       p5.classList.add('description');
-      p5.innerHTML = entry['description_en'];
+      const description = entry['description_en'].split('\n').join('</p><p>');
+      p5.innerHTML = '<p>' + description + '</p>';
       caption.appendChild(p5);
     }
     figure.appendChild(caption);

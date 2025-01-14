@@ -58,8 +58,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 600px;
-  /* new width 700px */
+  width: 700px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -262,8 +261,7 @@ body > * {
   width: 100%;
   max-width: var(--maxwidth);
 }
-/* new width 1270px */
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1270px) {
   .logo--short {
     display: inline;
   }
@@ -272,8 +270,7 @@ body > * {
     display: none;
   }
 }
-/* new width 1100px */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
   header {
     position: fixed;
     justify-content: space-between;
